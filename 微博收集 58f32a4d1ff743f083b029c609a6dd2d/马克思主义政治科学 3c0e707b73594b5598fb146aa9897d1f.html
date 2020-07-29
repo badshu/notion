@@ -1,0 +1,629 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>马克思主义政治科学</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="3c0e707b-7359-4b55-98fb-146aa9897d1f" class="page sans"><header><h1 class="page-title">马克思主义政治科学</h1><table class="properties"><tbody><tr class="property-row property-row-select"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesSelect"><path d="M7,13 C10.31348,13 13,10.31371 13,7 C13,3.68629 10.31348,1 7,1 C3.68652,1 1,3.68629 1,7 C1,10.31371 3.68652,13 7,13 Z M3.75098,5.32278 C3.64893,5.19142 3.74268,5 3.90869,5 L10.09131,5 C10.25732,5 10.35107,5.19142 10.24902,5.32278 L7.15771,9.29703 C7.07764,9.39998 6.92236,9.39998 6.84229,9.29703 L3.75098,5.32278 Z"></path></svg></span>作者</th><td><span class="selected-value select-value-color-purple">小童看天下</span></td></tr><tr class="property-row property-row-last_edited_time"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedAt"><path d="M6.98643729,14.0000972 C5.19579566,14.0000972 3.40419152,13.3106896 2.04245843,11.9323606 C-0.681017475,9.21200555 -0.680780251,4.76029539 2.04293482,2.04012507 C4.76664406,-0.68004331 9.22427509,-0.68004331 11.9480135,2.04013479 C13.272481,3.36277455 14,5.1330091 14,6.99552762 C14,8.87640182 13.2721894,10.6285043 11.9480135,11.9509302 C10.5679344,13.3105924 8.77756503,14.0000972 6.98643729,14.0000972 Z M10.2705296,7.00913883 L10.2705296,8.46099754 L10.2705296,8.65543362 L10.076181,8.65543362 L8.6543739,8.65543362 L5.72059514,8.65543362 L5.52619796,8.65543362 L5.52619796,8.46099754 L5.52619796,5.52541044 L5.52619796,3.37946773 L5.52619796,3.18502193 L5.72059514,3.18502193 L7.17253164,3.18502193 L7.36692883,3.18502193 L7.36692883,3.37946773 L7.36692883,6.81467358 L10.076181,6.81467358 L10.2705296,6.81467358 L10.2705296,7.00913883 Z M12.1601539,6.99552762 C12.1601539,5.61697497 11.6190112,4.32597154 10.6393933,3.34769528 C8.63253764,1.34336744 5.35197452,1.34061603 3.34153136,3.33944106 C3.33868273,3.34219247 3.33607716,3.34494388 3.33322852,3.34769528 C1.32397148,5.35459953 1.32372842,8.63641682 3.33322852,10.6433794 C5.34295224,12.6504489 8.62968901,12.6504489 10.6393933,10.6433794 C11.6190112,9.66506426 12.1601539,8.37408027 12.1601539,6.99552762 Z"></path></svg></span>最后编辑</th><td><time>@Jul 13, 2020 11:38 AM</time></td></tr></tbody></table></header><div class="page-body"><nav id="49f9970a-d39f-4e60-a0e7-815ef640b702" class="block-color-gray table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#771bf382-8f20-4b75-8022-dca288b066ac">（一）</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#a3b97870-dc33-4113-9054-30ab0b2362cc">番外篇</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#15fe7f0f-6d7a-4089-87a1-3d8ea2e01a89">（二）</a></div></nav><h1 id="771bf382-8f20-4b75-8022-dca288b066ac" class="">（一）</h1><p id="265b68ca-db53-41dc-85a1-9947eb5b2086" class="">马克思的政治思想对于今天的世界具有非常重要的科学意义。负责的说，现在的国际趋势和形势就是马克思所描述的。正确识别国际政治是洞悉本国政治实质的窗口，它是一个科学问题。但这个科学问题在如今还没有在理论中得到充分的认识。正如美国政策研究所及外交政策计划负责人约翰·费弗在2008年金融危机之后指出的：只有马克思主义可以解释和解决世界问题，期待世界对马克思理论做出正确的解答。</p><p id="121266b4-7788-4de8-9942-6f9de3a718b7" class="">对马克思的理论进行解释在这里无法进行
+，但是对于他的政治思想要进行认识就能理解当前的政治局势。马克思写作特点是对问题的核心极度的压缩和简练，但是解释起来却长篇大论。这一点经常被别人责备。比如几十万字的论述，其核心可能就几句话，而且核心思想有的是在几百页之外才出现短短几行字，稍不留意就过去了，根本不知道那是答案。有的甚至不在一本著作中，而且故意不让读者看。他自己也说过这问题，例如在《政治经济学批判》序言中就说：“我把已经起草的一篇总的导言压下了，因为仔细想来，我觉得预先说出正要证明的结论总是有妨害的，读者如果真想跟着我走，就要下定决心，从个别上升到一般。”为什么这样写是有道理的，这问题以后再谈。</p><p id="986bd062-dc28-488f-9f7a-a29feb3fa632" class="">所以他有些很简单的文章，尤其是看起来很政治化的文章，是包含了非常深刻的科学道理的。如果不全面的理解，就不知道他说那些话的意义是什么。而且马克思这个人特别“霸道”，在很多人眼里被形容为是个举止优雅，穿着华丽的“粗俗家伙”。《青年马克思》电影中就有这个描述。如果对方问的问题水平低，他不仅不理你，还得骂你。比如库格曼回忆说：有个绅士问马克思，在将来的国家里谁来擦皮鞋。马克思恼怒地回答他:“你擦!”。这是因为读者自己如果不努力去理解基本原理，靠他给去解释是不可能的。爱因斯坦的相对论也不是仅靠自己去解释就能清楚的，需要科学家自身具备相当的能力去才能理解。</p><p id="7e2283ae-03c8-47ad-95a9-01458d0e2a64" class="">以上说这些是提醒读者在阅读时，不能仅凭文字或所表达的去理解，而是对背后是否具有科学因素进行分析，并且必须通过科学的理论本身进行理解。</p><p id="52a6ff91-6e3b-42e3-848d-3b1261cc8d51" class="">我们都知道《共产党宣言》是号召全世界无产者联合起来帮助资产阶级取得政治统治的伟大宣言。马克思在随后1864年的国际工人协会成立，以及1872年国际工人协会在海牙召开的国际代表大会的报告中多次发出呼吁，全世界无产阶级联合起来，帮助资产阶级。巴枯宁曾攻击马克思恩格斯为资产阶级说话，就是由于他不明白其中的逻辑和科学原理。</p><p id="3e5bccd3-8ce0-4806-847e-2772dc67e9fa" class="">为什么呢？因为没有取得资产阶级政治解放的国家，其在资本主义的经济发展过程中，它的政治制度不仅没有发生变化，而且国家和组织借助经济力量反而取得了越来越完善和巩固的形式，它就与经济发展需要之间发生剧烈矛盾，最终会演变成帝国主义对外发动战争。因为政治必须服从经济需要，而这种状况下，经济就是服从政治需要的，这是必须也必然灭亡的。</p><p id="ad2108b7-6a61-4488-877d-c606353d0ce3" class="">但是资产阶级的软弱性不敢去争取自己的利益，那么工人阶级就要帮助资产阶级完成它不敢完成的历史使命。因为工人阶级的经济利益必须建立在资产阶级政治制度之上，也就是说，工人阶级不帮助未来的敌人——资产阶级打败它的敌人——统治阶级，即《共产党宣言》指出的“在这个阶段上，无产阶级不是同自己的敌人作斗争，而是同自己的敌人的敌人作斗争，即同专制君主制的残余、地主、非工业资产者和小资产者作斗争。因此，整个历史运动都集中在资产阶级手里;在这种条件下取得的每一个胜利都是资产阶级的胜利。”无产阶级不帮助资产阶级，自身就不能取得任何利益并走上解放的道路。政治必须服从经济需要，但这只有在资产阶级政治解放的条件下才能实现，同时无产阶级也才能取得斗争的手段。马克思在《临时协章程》中指出：“工人阶级的经济解放是一切政治活动都应该作为手段服从于它的伟大目标。“</p><p id="65b1556c-e49c-4964-840d-456917e6e1e6" class="">在没有取得资产阶级政治解放的国家。工人阶级就要警惕本国统治阶级在国际事务中的表现。所以马克思在《国际工人协会成立宣言》指出：“夺取政权已成为工人阶极的伟大使命”，并号召无产阶级“洞悉国际政治的秘密，监督本国政府的外交活动，在必要时就用能用的一切办法反抗它。”</p><p id="b4eda02c-2317-4c7e-ac39-c57b72deac0d" class="">政治没有国内和国外的区别，而是同一个国家所处的社会关系中的不同表现。有些国家之所以表现的差异过大，是由于国内的政治发展与经济发展分离所导致的，这种情况是帝国主义形成的土壤。而这种国家的政治思想在表现上恰恰相反，是以反帝国主义、反霸权的意识形态在国际交往中出现的。所以国际关系理论家汉斯·摩根索在《国家间政治》中指出：“帝国主义最广泛使用的伪装和辩解，一直是反帝国主义的意识形态。”他在对这句话的注释中说：“反帝国主义意识形态的一个变种是反权力政治的意识形态。根据这种意识形态，别国都是以权力欲为动机来推行它们的政策的，而自己国家却摆脱了这种基本的动机，追求纯洁的理想目标。”</p><p id="c62385fd-d8c0-486a-b471-c04b5be8df14" class="">而这种“纯洁理想目标”实际就是封建主义意识形态还没有被肃清的表现，尤其是其国家还没有实现资产阶级政治解放的现实表现。这是两次世界大战的根本原因之一。所以对一国表达出的政治思想进行科学分析和辨别是政治最重要的工作。因此摩根索指出：“由此看来,看穿这些意识形态伪装并理解这些伪装背后的实</p><p id="e35dbefa-59ba-405c-a6fc-fa5463ed920c" class="">际政治力量和现象，是国际政治学者最重要和最困难的任务之一。这个任务之所以重要，是因为假如不完成这项任务就不能正确地确定人们正好应对的那种外交政策的性质。认清帝国主义倾向及其特性有赖于明确区分帝国主义的意识形态托词和实际所追求的政策目标，因为帝国主义的意识形态一般总要根本否认其帝国主义愿望。正确地做出这种区分是困难的，因为要想发现任何人类行为的真实意向,使之有别于行为者所相信的或所伪造的意向,一般都是困难的。”</p><p id="40c8674f-b06a-448d-85da-9d7e8adc317b" class="">阿尔贝·加缪也提出相同的问题，他说：“依我之见，每个人都应思考这个问题，因为，在论战、威胁和暴力之中，令我震惊的是所有的人都有良好的意愿。几个骗子除外，从右派到左派所有的人都认为，他们的真理就是要使人们幸福。然而，这些良好的意愿的汇合却导致了一个穷凶极恶的世界，在这个世界上，人们仍被杀戮，受到威胁，被流放，人们还正在准备着战争，只要人们说一句话就不可能不即刻遭到谩骂或出卖。”</p><p id="bc8b1b0c-1ed3-44f3-8f83-b697fdbcdf70" class="">帝国主义政治是封建主义意识在资本主义生产关系中，由于自身的不安全感而在国际政治交往中，妄想取得与自身在国际政治舞台中不相符的政治权力和地位而产生的政治行动。国际政治中首先就要警惕任何一个国家具有这样意图的政治，汉斯·摩根索在《国家间政治》说：“无论如何，对明智的外交政策来说，对威望与实际权力不符的情况不应该等闲视之。”</p><p id="b58ad62f-8098-4324-9539-455f046a31c0" class="">帝国主义这种政治行动的动因是由于国内市场无法满足生产力发展的需要而形成的市场扩张需求，其政治思想表现为具有高尚的、道德的人类共同理想。例如拿破仑帝国主义的“自由、平等、博爱”；希特勒的“人类共同体”；日本帝国主义的“大东亚共荣圈”等等具有革命性内涵的意识形态。</p><p id="8aefd74a-86fc-427a-8019-b1ff80a23a4c" class="">所以国际关系理论家汉斯·摩根索在《国家间政治》中说：“帝国主义政策永远需要意识形态，因为与现状政策相比，帝国主义永远有需要证明的负担。它必须证明，它寻求推翻的现状是应当被推翻的，在许多人心目中现存事物所具有的道义正当性，应当让位于一种要求新的权力分配的更高的道德原则。”</p><h3 id="a3b97870-dc33-4113-9054-30ab0b2362cc" class="">番外篇</h3><p id="a3feec11-8796-4878-8734-eaa30efc9ee4" class="">我为什么要让大家认识马克思主义？因为不知道马克思理论到底是什么或者有误解，就会产生错误的斗争对象并由此形成理论上的重大偏差，导致整个国家崩溃。如果对理论不容易理解，那么首先必须理解共产主义同盟到底是干什么的？是与资产阶级斗争吗？不是！</p><p id="d73ed234-4842-4a09-b77f-4dab91fb92fc" class="">马克思指出：“国际（共产主义同盟及国际工人协会）的历史就是总委员会对那些力图在国际内部巩固起来以抗拒真正工人阶级运动的各个宗派和各种浅薄尝试所进行的不断斗争。这种斗争不仅在历次大会上进行，而且更多的是在总委员会同各个支部的非正式会谈中进行。”（《马克思恩格斯全集》33卷，P332）</p><p id="d0414bbc-45e2-45a7-b74a-22784474f609" class="">因此必须知道，马克思恩格斯受到的指责、攻击和谩骂几乎都是来自各个工人阶级或共产主义党派。例如巴枯宁就指责马克思恩格斯对无产阶级抱有极端蔑视的态度。为了侮辱马克思，只要能用的词儿全都用上了，甚至想不到的地方，都骂出花来了。例如巴枯宁说：“马克思不顾自己的一表人才而就学于侏儒似的法国人（注：路易·伯朗）。”</p><p id="1a5712e0-e271-490d-80a7-1b02af58c884" class="">所以这是一群乌合之众，马克思认为没有科学思想指导就不能为无产阶级提供帮助，所以不以科学的理论首先战胜这些工人阶级党派，即各种社会主义和共产主义学说，资本主义发展就会遭到破坏，阻断无产阶级的解放道路。甚至李卜克内西、拉萨尔等都受到马克思严厉的批判。</p><p id="a8b94390-f7f6-40df-8f90-32cc2f383037" class="">所以应当知道我们今天看到的那些正能量所宣扬的社会主义和共产主义就是当年马克思恩格斯遇到的，即用意识形态构建出的封建的社会主义。列宁、加缪、阿尔都塞、福柯等人都表达和指出过，后来这些被马克思打败这些人或思想后来都披上了马克思主义者的外衣，盗用了他的名义。所以不把这些人纠出来，就会产生错误的政治意识并导致严重的历史后果。</p><p id="8431e7c7-4e6b-4043-8c53-51d0851353b2" class="">今天中国面对的就是这样一群人，它们妄想用“美好”的意识形态塑造制度和现实。加缪说过：“这类意识形态中产生出的制度，恰是系统地让人民背井离乡，把人民当做毫无生气的幽灵驱使在欧洲大陆，让他们仅在统计数字中，才体现出微不足道含义的那种制度。”</p><p id="0756c941-4046-468c-bcc5-c63c1bdc99fc" class="">儒家思想没有任何科学思想存在，逻辑关系决定也不可能存在。但今天中国正是这种意识形态妄想凌驾于现实之上，由于它们没有理论思维，因此只有靠无端攻击、粗俗的谩骂和恐吓妄想让现实及人们屈服它们的意识和幻想。正如加缪说的：“没有说服就没有生命，而今天的历史只有恐吓。”</p><p id="7a273c88-d1fe-481d-9fa2-bd13d715b5f0" class="">中国的流氓政客、无耻文人或不学无术之徒，在历史中有意或无意的把中西方思想进行对立，也就是说，它们认为有些西方知识，例如哲学、政治学、经济学等所谓社会科学中的一些知识是不适合中国国情的。但是却没有认为物理、化学、数学、生物学等等西方知识不适合中国。这是因为自然科学知识中没有意识形态存在的因素，而在社会科学中或多或少的存在着，或者完全是意识形态。</p><p id="27e18eac-026c-444e-aead-2109f8092022" class="">当然，也不是没批判过。文革期间对爱因斯坦相对论、欧几里得《几何原理》等学说进行了大规模的批判，例如在1968年6月题为《彻底批判自然科学理论中的资产阶级反动观点——评相对论的基础──光速不变原理》的文章中提出：无产阶级要对自然科学领域中的资产阶级实施专政。文革后，中国科学院还搞了次活动为爱因斯坦“平反”，即纪念爱因斯坦诞辰一百周年的活动。</p><p id="ce0a5553-182d-4fca-8989-414af757a7c7" class="">这是为什么呢？儒家社会的特点是由文人构成的官僚统治阶级，而这些文人是儒家思想的产物。而儒家思想在面对它之外的任何思想体系或知识时，是根本站不住脚的。它不能也不敢面对其它思想和知识的挑战，所以它必须以强调国情以回避。在资本主义生产关系面前，儒家思想丧失了任何价值，即官僚制度中所有引以为傲的东西变成垃圾了，或者说成为阻碍社会进步的事务了。</p><p id="16269dc1-8494-41a4-a56c-dcba1f26d1ee" class="">儒家思想实际上最惧怕和痛恨马克思主义，因为这个理论体系对它的毁灭性是最大的、最彻底的，儒家思想在这种理论面前没有任何能够自圆其说的可能性。但在其它西方哲学面前，儒家反而能够把自己乔装打扮的包装一番，例如新儒家就对康德、黑格尔的理论进行融合。美国哲学家杜威、英国哲学家罗素来中国时居然被儒家文人赞誉为“孔夫子第二”。</p><p id="3bd38a44-426a-4e7a-9821-67ebfe7bccf5" class="">儒家也一直试图把马克思主义中国化，但实际根本不可能做到，所以只能将其扭曲。只有将马克思理论进行抽象处理，并通过国情特殊或所谓历史阶段的不同才能自圆其说。也就是说将马克思主义作为招牌，而内容是儒家的。</p><p id="1dd18b7e-5989-4f67-ac1b-19fa51280efe" class="">所以多年来“马克思主义中国化”的文章不计其数，但全是胡说八道。因为马克思理论是对哲学的否定，即任何思维理性的否定。它是以自然科学为基础的，与物理科学遵循相同的思维方式。在科学的事物中没有理性和感性的区别，而是对事物本身的研究。因此就是一门科学，只不过是没有被充分认识到的科学。</p><h1 id="15fe7f0f-6d7a-4089-87a1-3d8ea2e01a89" class="">（二）</h1><p id="e1c41aca-33e1-40ff-9587-8da621f50387" class="">中国的小政客儿们特别喜欢假装自己是政治家，整天装出一副假深沉的面孔和沉稳体态冒充自己挺懂，其实一脑子浆糊。政治的工作内容是自然科学知识的总和，即在所有科学规律中的同一性中展开工作。而同一性只能是看不到、摸不到的各种关系，这是现代科学中的思维方式。</p><p id="066c1167-c474-4ce4-a23b-8ba107f3f6c0" class="">而愚昧的思想，或非科学政治的思维对象物是：组织、军事、外交、法律、纪律、官僚系统、意识形态、金钱、人口、土地等概念及这些事务之间的关系。例如加塔诺·莫斯卡的《政治科学原理》就是对这种事务之间关系的思考，所以他不是一部科学意义的著作，因为这种思维对象导致不能进行逻辑思考。正如尼采说的：不是在事物中寻找关系，而是对关系的理解。”也就是恩格斯指出的：“我们注意更多的是运动、转变和联系，而不是什么东西在运动、转变和联系。”</p><p id="ba7a576b-75a5-4672-b72b-75e28ea4c44e" class="">所以，那种把外交、军事、组织等这种事务当作思维对象的政治，即愚昧的政治思维模式是小农时代的，这种思维方式不能管理处于资本主义生产关系中的国家，这些属于事务工作，是官僚们干的事情，不是政治工作。而愚昧的政治工作就是在这方面瞎使劲，只能让国家崩溃，因为把政治工作内容搞反了，这是极端愚昧的。</p><p id="7fd872d4-ddda-412d-87a2-24cf011ec5ab" class="">所以马克思指出：“所有的国家都在行政机关无意地或有意地办事不力这一点上去寻找原因，于是它们就把行政措施看做改正国家缺点的手段。为什么呢?就因为行政是国家的组织活动。要消除在行政机关的任务、它的善良意愿和它所能够采取的手段、办法之间的矛盾，国家就必须消灭自己，因为国家本身就是以这个矛盾为基础的。”所以国家在这方面使劲儿只能最后发展到消灭自己才能消除问题的地步，即走入绝境。</p><p id="46ea5b29-dbf3-4967-a41d-b70920a0aa80" class="">也就是军事、外交、组织等等这些事务存在恰恰社会矛盾本身造成的，而社会矛盾是国家存在的基础，因此这些事务发生问题不是这些事务本身的问题，而是社会关系的矛盾产生的，即生产与再生产之间的矛盾，也就是说那些事务是被生产和交换关系的矛盾决定的。也就是马克思说的：“一切历史冲突都根源于生产力与交换关系之间的矛盾。“</p><p id="3577c24d-9f6e-49eb-80f5-7f9a9fc4e4de" class="">因此解决这些事务之间的矛盾只能导致增加这些问题之间的矛盾，产生国家与社会之间更大的矛盾和冲突。因此不是解决问题，而是制造问题。这是由于产生那些事务矛盾的原因，即生产与再生产所形成的社会关系本身的矛盾没有解决。</p><p id="2cdc08f2-e892-4843-9ee5-4ac729a764ad" class="">李卜克内西在《纪念卡尔·马克思——生平与回忆》中有一段话需要中国的小政客儿们了解。他指出：“在马克思看来,政治是一门学问。
+他对那些酒吧间的政治家和那种政治深恶痛绝。确实，难道还能想像有比这更荒唐的事吗?历史是人类和自然界的一切有效力量的产物，是人类思想、人类激情、人类需求的产物。而政治，从理论上来说，它是对亿万在“时间这部织机”上奔忙的要素的认识；从实践上来说，它是由这种认识所决定的行动。因此，政治是一门科学而且是一门应用科学。政治科学或政治的科学，实际上是一切科学的精髓，因为它囊括了人类及自然界活动的整个领域，而人类及自然界的活动又是一切科学的目标。</p><p id="c08917ad-ba94-4da6-9331-5f327229117f" class="">不过，每个蠢货都自以为是一个伟大的政治家甚至是国务活动家，就像每个蠢货都自以为是一名优秀的报刊编辑一样。”</p></div></article></body></html>

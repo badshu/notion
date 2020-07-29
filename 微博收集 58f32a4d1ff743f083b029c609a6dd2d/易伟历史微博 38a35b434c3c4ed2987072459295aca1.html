@@ -1,0 +1,630 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>易伟历史微博</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="38a35b43-4c3c-4ed2-9870-72459295aca1" class="page sans"><header><h1 class="page-title">易伟历史微博</h1><table class="properties"><tbody><tr class="property-row property-row-select"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesSelect"><path d="M7,13 C10.31348,13 13,10.31371 13,7 C13,3.68629 10.31348,1 7,1 C3.68652,1 1,3.68629 1,7 C1,10.31371 3.68652,13 7,13 Z M3.75098,5.32278 C3.64893,5.19142 3.74268,5 3.90869,5 L10.09131,5 C10.25732,5 10.35107,5.19142 10.24902,5.32278 L7.15771,9.29703 C7.07764,9.39998 6.92236,9.39998 6.84229,9.29703 L3.75098,5.32278 Z"></path></svg></span>作者</th><td><span class="selected-value select-value-color-green">易伟</span></td></tr><tr class="property-row property-row-last_edited_time"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedAt"><path d="M6.98643729,14.0000972 C5.19579566,14.0000972 3.40419152,13.3106896 2.04245843,11.9323606 C-0.681017475,9.21200555 -0.680780251,4.76029539 2.04293482,2.04012507 C4.76664406,-0.68004331 9.22427509,-0.68004331 11.9480135,2.04013479 C13.272481,3.36277455 14,5.1330091 14,6.99552762 C14,8.87640182 13.2721894,10.6285043 11.9480135,11.9509302 C10.5679344,13.3105924 8.77756503,14.0000972 6.98643729,14.0000972 Z M10.2705296,7.00913883 L10.2705296,8.46099754 L10.2705296,8.65543362 L10.076181,8.65543362 L8.6543739,8.65543362 L5.72059514,8.65543362 L5.52619796,8.65543362 L5.52619796,8.46099754 L5.52619796,5.52541044 L5.52619796,3.37946773 L5.52619796,3.18502193 L5.72059514,3.18502193 L7.17253164,3.18502193 L7.36692883,3.18502193 L7.36692883,3.37946773 L7.36692883,6.81467358 L10.076181,6.81467358 L10.2705296,6.81467358 L10.2705296,7.00913883 Z M12.1601539,6.99552762 C12.1601539,5.61697497 11.6190112,4.32597154 10.6393933,3.34769528 C8.63253764,1.34336744 5.35197452,1.34061603 3.34153136,3.33944106 C3.33868273,3.34219247 3.33607716,3.34494388 3.33322852,3.34769528 C1.32397148,5.35459953 1.32372842,8.63641682 3.33322852,10.6433794 C5.34295224,12.6504489 8.62968901,12.6504489 10.6393933,10.6433794 C11.6190112,9.66506426 12.1601539,8.37408027 12.1601539,6.99552762 Z"></path></svg></span>最后编辑</th><td><time>@Jul 7, 2020 4:25 PM</time></td></tr></tbody></table></header><div class="page-body"><p id="32350e52-5254-4330-8f8e-a97f7356879b" class=""><a href="https://weibo.com/1862695480/I4SCChkaT?from=page_1005051862695480_profile&amp;wvr=6&amp;mod=weibotime">2019-9-1 08:44</a> 来自 <a href="http://vip.weibo.com/prividesc?priv=1006&amp;from=feed">iPhone客户端</a> </p><p id="edae061d-a4c6-4901-b96b-5f877d80c8df" class="">本国现实决定了一段时间内不会有散户英雄所谓史诗般大牛或诗史般巨熊。一切都是个股及个股研究。而个股的分歧在于有些涨多了会适当回撤，之后继续上。有些即便有反抽也会逐渐坠入永夜。不同维度的观察者或不同宽度的投资者对回撤的定义也不一样。无限量的供应和有限度的取舍。你自己有定见就好。 ​​​​</p><p id="ea5416b0-25b4-4bbf-b12b-df1b72291be2" class="">
+</p><p id="2490dc0a-3c7d-41d0-afb3-45166cbc5745" class="">不知道什么叫以最小的成本回归有限真相？举个例子，未来90%的老A个股都是毫无参与意义的。你的责任其实就是在这个以淘宝为主的博傻市场，1、找对剩下的10%就是活着；2、在活着的里面找能一直活下去的，包括退市；3、在这一小群活物里找巨头未切入，或尚未兑现垄断红利的。</p><p id="ee5b8506-0d1f-4759-bdd4-75c11d8e1ac0" class="">新老粉的区别在于四大关键词：
+出清、爱你、迭代预测、隐性法则。</p><p id="48b70711-1a12-41b3-a671-0e98044d1c10" class="">第一个是关于周期和身段论；第二个是搞清楚谁是对手盘，以及随时可能变节的弱势同盟；第三个和第四个本质一样，以最小的成本回归有限真相，因为无限真相意味着无限成本，无解。</p><p id="a1fd2c15-907b-490d-8100-3eca3f0e6d80" class="">从持有个股的坚持度来看，在我认识的圈子里，外资大于大户，牛散大于私募，私募大于公募，最没节操的是社保、某队、假外资。</p><p id="1fe6f49e-9733-4214-9642-db87dea95e93" class="">贝达药业，迈瑞医疗…</p><p id="55715781-ca2b-4fda-ba3d-28d6303a6e42" class="">兆易创新，易华录，带易的股票都很牛逼[嘻嘻]</p><p id="91985571-3155-4849-93b5-90fb59d48619" class="">社保这些小混混主要是吃政策时间差。公鸡主要是抱团取暖和中期趋势。真正独当一面挖掘能力强的还是私募，以及一些顶级个人投资者。
+王孝安 大立科技</p><p id="5800a223-ce1e-4ae1-bb3f-aa797aaf428b" class="">社保不仅仅可以吃政策时间差，他还可以左右政策，比如分红政策，他还可以耍流氓，无偿划拨，资金无限多，规则由他来定，公鸡就是伪军吧，跟着大哥打打秋风，私募是最脆弱的，看起来能赚钱，很容易被人家一把showhand，个人一点浅见，交流下</p><p id="1d6ef09a-d3fb-4bce-a635-415be997ce65" class="">而挖掘能力类似摸金校尉了。有些过程是滞后于预期的。期间的不确定因素也会经常动摇人的意志。当然也不能以艰苦卓绝来形容，过了。该呈现的都会呈现。该兑现的都会兑现。共识，不需要迭代预期。这种能力放而大之也是未来全注册制下的做市商能力，券商、私募、机构。</p><p id="14fe4cf1-7023-4219-8137-3f2daf20d63f" class="">我？商业意识凑合，文字马马虎虎，合适幕后摇个鹅毛扇什么的，不堪一线。说笑了。其实核心还是产品。记得那天我提了大概四五点。一是要独特。二是别无他处。三是符合年轻人喜欢的简约、黑科技、轻奢但不炫，四是极强的识辨力，最后一条，得和直播者的潜在人设对应，最好留半步进化距离。</p><p id="180a0f28-cd70-49d0-a4fd-b14502871145" class="">一季报还赚钱不少的都是既得利益者。打它们浮财就对了。</p><p id="b25f446f-72ae-4d8d-8708-bd57785fb652" class="">我们努力走向现代化，其本质也是一个追寻多元化的进程。不同的人生活在不同的象限中，有隔绝，有相通，有拐弯处的礼让或冲撞，也有擦肩而过的默然。</p><p id="1229aacd-1cc7-409e-b93a-b5371aa69b67" class="">不同指向和渠道的言论也是这种多元化存在的重要体现。很多时候，对待“异见”所持的态度本身，往往胜过大众面前的我是你非。何况立场不同，利益冲突之际，讲究进退有据即可，道德的，伦理的，法律的，明晰起来，心平气和。这也是一个成熟企业对产品和客户的态度。</p><p id="494c21b2-cd56-49a6-85e2-43f01bc6a89a" class="">所以很多公开的呼吁大可不必咬牙切齿。如果还有意无意涉嫌“裹挟”上百企业领袖，效果未必好，甚至以叵测之心度之，反倒坐实了财阀之道、朋党之名。</p><p id="79b54e78-5133-4f61-8457-db56ecd9b9ad" class="">去年湖畔大学受攻击时，有位企业界老前辈写过一篇辩解的文章，把「东林党」这么古董的词儿都端出来了。我记得那时有人转给老易，说你喜欢读史，评评看？我写过一篇评论，大体想法是总觉得那篇东西有一点小处精明大处糊涂的味道。你证我证，不如不证，尤其当企业家的“议价能力”过于迅捷从“资本”转换为“政治”，恐有补正之嫌。</p><p id="801aab15-8b7e-4918-b5e4-2218789af53f" class="">如果说学会“止损”，方可“入局”，这个走向多元化的社会进程也一样。这些进退怎么转化为利益集团之间、利益集团和大众之间、大众和大众之间的博弈，我们离这方面的现代化，还远的很啊。</p><p id="db0011c4-be65-47f1-9fbb-7f6a7bc293b3" class="">很多矛盾呈现出来也是好事。它们中间有一些会隐忍，一些会爆发，爆发的时候也许激烈也许温柔。时代需要发声的事件很多，越有能力发声的人也要珍惜所选择的力度和角度。时代的风声猎猎，见证每一寸光明和黑暗。</p><p id="f2fb7512-c157-4656-b5cd-c6a8aebc9e8a" class="">就不发散了。</p><p id="da44ba92-5021-41de-82f1-18a993daee92" class="">我觉得能叫未来科技，也许会有几个属性。一是，非常规科技，突变型，而从发展结果上颠覆既有的科技规范或矛盾；二是，会延伸出“伦理”之争，社会学意义上的困惑；三是，会从一个特别不起眼却习以为常的广域爆发，从而在经济上获得极易推广甚至潮流；四是，越是某个领域垄断越厉害越容易发生，反抗。</p><p id="5d643d86-796b-4f57-ad50-23cefb3c7d04" class="">几年前的。</p><p id="0ef44616-67f3-4c0e-ae95-c0634d693e3e" class="">趋势判断涉及五个概念：常规预测、累积错误、修正、意外事件、趋势。</p><p id="a5fe4ee5-faf8-4414-a13e-4bbfaba9d76d" class="">常规预测的弱化形态之一是迭代预测。如果在未来某个时点预判某事会发生，那现在早已预判到了。</p><p id="9671fca8-cd48-498c-9c43-2ae799a0c5dc" class="">常规预测的弱化形态之二是群体预测。群体行为有章可循，而个体行为很难把握。</p><p id="723e9af1-8755-484e-bb48-971e9bc25a0d" class="">社交媒体是群体行为的温床，其目的主要是释放当下压力。压力本身不支持确定下一步行动的途径，但它能预测这种群体选择的可能结果。</p><p id="2144c94a-ab3d-4a50-8500-6940f8f7d067" class="">这个过程无法逆选，概因时间无法逆行。也算是“可选性”和“因果律”之对立统一吧，无论怎么选择，因果决定了起点和终点。</p><p id="59bc1a12-ec8a-4429-9eef-ee96ad728af4" class="">人性的解放。宿命的必然。</p><p id="a7180f4f-c00a-4469-806e-bcb6c2b52271" class="">世上最多余的三件事，一是去解释，尤其解释给自己，其实你通还是不通跟很多事情如何继续没一毛关系；二是让所有人满意，以德报怨，何以报恩？所以保持距离挺好；三是你以为很了解别人，最难的事就是去了解，因为对方可能早已进化为一个新版本，你还在旧副本折腾。 当然，你还得去实践这些多余。</p><p id="a0650f6f-56b1-4440-9792-834dc6bd9937" class="">消费股只有在估值恢复阶段会比较迅猛，后面大多会有个平缓的过程，直到事件驱动或商业模式更新，带来双击，或纯粹结构性重组，再开始一段估值想象过程。它不会像科技股那样烈性子，但拉开时间来看一定不逊色。</p><p id="d5d01e0a-4a10-4b3c-8311-b1f53bbb02df" class="">研究交易背后的行为逻辑是交易思想的一部分，进而演化为“事件驱动模型”。它大致几个要点：1、量化并将其隔离为相应预期结构；2、匹配转化时间价值；3、杠杆设计；4、反向证伪；5、拐点“触发”机制，即是否触发的新一轮“驱动”。此模型不依赖于“预测”，更多是对“预测”的一种低损耗快速反应。</p><p id="46252929-b118-470e-8937-e3759a03785f" class="">苹果的特色是不会逼迫你立即接受。而它引领的趋势会转换为时尚，以及一波又一波开发商会创建各种应用，跨界，导入，或者螺旋上升到消费红海。这其中尤其是各细分市场的龙头会借势发力。科学哲学、交易哲学、消费哲学，不是一个范畴，但它们的核心内容都是基于人性。</p><p id="5c60171d-bc56-4a29-8b7a-b5604391bbe1" class="">去年写的：很现实的超额收益在本土市场：1、龙头大哥进小重组；2、稀缺资质撞上事件驱动；3、超跌巧遇政策红利；4、业绩爆发驱动。这其中两样叠加就更难得了。这里面有择时成分、推动型成分。有研究的成分、运气成分，都以不输为原则，即以前多次提过的概率+赢率法则。 说说你主动或被动遇到过的？</p><p id="20b1d2a2-e324-4932-b970-00227e4c806c" class="">至于如何提前将这些要素设计相应预期结构、匹配转化时间价值以及反向证伪，甚至触发的新一轮“驱动”。构成一个完整的“事件驱动交易模型”，则是这个周末我要整理的东西了。</p><p id="a2ba8254-57ac-47f0-b97a-1bfe15c9f3e6" class="">“择”。“断”。才可能迎接“事件驱动”并最大化套利之。 这里面有个小诀窍就是培养和观察“反向指标”。一个久经考验的“反向指标”抵一百篇有见地的正向分析，行为金融学意义上的“扳机效应”。</p><p id="d9bf45a7-9246-4fb2-a19c-e23b0419b1b8" class="">“择”和“断”是两道“甜点”的话，这周开始给小宇宙的主题进化到了“正菜”阶段。第一道就是“事件驱动交易模型”。谈了何为“事件”，何为“驱动”，以及如何设计“交易模型”并量化。还举了苹果产业和体育产业各一个十倍案例分别对应“技术”和“并购”突破的迭代回归解构。基本完成，明晚船递。</p><p id="ec147777-7170-404f-b42d-57aa039ff77e" class="">一个合格的分析师应该懂宏观政策（事件驱动）、懂未来科技（迭代回归）、懂交易心态（趋势为王）</p><p id="cd67b7e5-170e-4caa-8974-c47f8b5ee361" class="">确定性的机会只有四种。一是掉到手术台上来一个结构性上涨，如老江湖；二是极其少数长坡企业在合适性价比分仓进入，这样你敏感而脆弱的心灵才会逐渐获得心灵安全垫；三是我们分析过的事件驱动模型之驱动导图，要非常精准的手法和专业能力，以及同样分阶段介入。四是一个较长景气的指数化投资。</p><p id="9263bbda-8403-44fa-a034-52fe1e1d9214" class="">至少在漫长的一段时间内，A股还是一个强零和游戏。你的对手如云：无底线套利的零级、一级，做波段的嘴皮价值投资者包括GJ队，假外资，美其名曰财技实则欺瞒的上市公司本身，一心出清的管理层，抱团取暖的机构，从来不是雷锋的游资，良莠不齐的私募，以及你最大的合伙人，同样懵逼的另外一些散户。</p></div></article></body></html>

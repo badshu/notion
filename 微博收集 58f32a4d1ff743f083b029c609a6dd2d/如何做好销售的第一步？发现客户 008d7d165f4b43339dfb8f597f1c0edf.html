@@ -1,0 +1,628 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>如何做好销售的第一步？发现客户</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="008d7d16-5f4b-4333-9dfb-8f597f1c0edf" class="page sans"><header><h1 class="page-title">如何做好销售的第一步？发现客户</h1><table class="properties"><tbody><tr class="property-row property-row-select"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesSelect"><path d="M7,13 C10.31348,13 13,10.31371 13,7 C13,3.68629 10.31348,1 7,1 C3.68652,1 1,3.68629 1,7 C1,10.31371 3.68652,13 7,13 Z M3.75098,5.32278 C3.64893,5.19142 3.74268,5 3.90869,5 L10.09131,5 C10.25732,5 10.35107,5.19142 10.24902,5.32278 L7.15771,9.29703 C7.07764,9.39998 6.92236,9.39998 6.84229,9.29703 L3.75098,5.32278 Z"></path></svg></span>作者</th><td><span class="selected-value select-value-color-brown">程时旭</span></td></tr><tr class="property-row property-row-last_edited_time"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedAt"><path d="M6.98643729,14.0000972 C5.19579566,14.0000972 3.40419152,13.3106896 2.04245843,11.9323606 C-0.681017475,9.21200555 -0.680780251,4.76029539 2.04293482,2.04012507 C4.76664406,-0.68004331 9.22427509,-0.68004331 11.9480135,2.04013479 C13.272481,3.36277455 14,5.1330091 14,6.99552762 C14,8.87640182 13.2721894,10.6285043 11.9480135,11.9509302 C10.5679344,13.3105924 8.77756503,14.0000972 6.98643729,14.0000972 Z M10.2705296,7.00913883 L10.2705296,8.46099754 L10.2705296,8.65543362 L10.076181,8.65543362 L8.6543739,8.65543362 L5.72059514,8.65543362 L5.52619796,8.65543362 L5.52619796,8.46099754 L5.52619796,5.52541044 L5.52619796,3.37946773 L5.52619796,3.18502193 L5.72059514,3.18502193 L7.17253164,3.18502193 L7.36692883,3.18502193 L7.36692883,3.37946773 L7.36692883,6.81467358 L10.076181,6.81467358 L10.2705296,6.81467358 L10.2705296,7.00913883 Z M12.1601539,6.99552762 C12.1601539,5.61697497 11.6190112,4.32597154 10.6393933,3.34769528 C8.63253764,1.34336744 5.35197452,1.34061603 3.34153136,3.33944106 C3.33868273,3.34219247 3.33607716,3.34494388 3.33322852,3.34769528 C1.32397148,5.35459953 1.32372842,8.63641682 3.33322852,10.6433794 C5.34295224,12.6504489 8.62968901,12.6504489 10.6393933,10.6433794 C11.6190112,9.66506426 12.1601539,8.37408027 12.1601539,6.99552762 Z"></path></svg></span>最后编辑</th><td><time>@Jul 12, 2020 12:50 PM</time></td></tr></tbody></table></header><div class="page-body"><p id="efe44495-5a2c-479a-a07b-48f32108d20c" class="">销售的第一步工作是什么：研究行业和客户，发现谁是你未来的金矿。</p><p id="2f722424-3061-49f0-9ca8-8698c68660e3" class="">我们发现，销售往往发现客户、接近客户、Qualify(筛选) 客户这三个环节投入远远不够。</p><p id="33400565-a4b0-4e24-b532-14b58c9b0206" class="">我们把前两个环节叫做“Prospecting”，即：发现优质客户，也即“勘探”，筛选它，然后是想办法接近客户，就是Approaching，建立客户联系。</p><p id="ad26ab6d-c960-4ada-b014-19eb0de1cb26" class="">市场要先做有钱的企业，高逼格的企业，形成标杆、样板，起到示范效应。最后在市场上形成势能，销售整体就会很容易。</p><p id="87a7ee87-9c9e-4f95-ac73-05e1785385a8" class="">发现行业的人是很牛的。我记得刚去Oracle的时候，Anthony Xu就在太阳能和造船为Oracle ERP掘到了金矿，做完标杆样板以后，行业尤其是太阳能基本被Oracle通吃。</p><p id="0df947f1-b2ab-450b-a7a4-5cb69def7c31" class="">有人说找客户要看资产，这个是不对的，钢铁行业资产多，是好客户吗？不是。整天亏损的行业不大可能给你咨询和软件费。</p><p id="0b8bdd16-5efb-47c7-aa69-66ab39331961" class="">评估行业和客户：</p><p id="7870fae4-a6e0-4ce5-8b72-4ae5f5ccd7ce" class="">1. 首先要看销售收入、毛利和净利润，可以打开公司网站或者公司历年的年报认真去看。</p><p id="c698a2b4-1b0e-48dd-b074-b71632addc40" class="">2.其次要看消费习惯，有过采购类似产品和服务历史的比较容易成为潜在客户。</p><p id="d374f35e-cba5-41f0-a9ac-942fc973b3c6" class="">3.最后还要看该公司的业务挑战、战略，未来是否有重要的变革和转型需求，一般总体战略要调整，在各业务条线比如财物、HR、销售等就会有相应的咨询、系统和服务需求。</p><p id="5531e56d-ef6d-458d-ae4d-fb7950dc7e15" class="">从行业层面来看，地产、互联网、高科技、金融、汽车、通讯，这六个行业都是高毛利行业。一般都是软件和咨询行业的大客户。</p><p id="397c0573-bc27-483c-a8ef-a71b4e8a24ce" class="">能源比较复杂，电力、煤炭、石油、天然气、新能源比如太阳能等都是有钱行业，但行业起伏较大，并且里面国有企业居多，在该行业积累时间长、研究深入的企业比较占据优势，比如Accenture、IBM等。媒体行业也类似，在中国媒体是高垄断行业，对市场竞争没那么敏感，所以采购咨询和软件、服务等需求就没那么强烈。</p><p id="9765fe77-2196-4674-939e-212a0fb76064" class="">医药、教育、零售要看前几位。教育比如新东方、好未来、51talk等。零售国美、百联之类零售客户，挣钱不容易。</p><p id="95cf6fec-d8c0-41f7-91d3-8bc5ffa81c95" class="">还有建筑类，服装类都很不容易。毛利太低，卖条毛巾赚几毛钱，一般不太愿意花太多钱在系统、咨询上。</p><p id="5aa6fe5f-7cdb-4c4c-9099-d7b68fb7ed0c" class="">在地理上来看。销售到一个大城市，首先就要问这城市最好的前5家企业是谁？这样基本锁定前5位的也不会有错。</p><p id="f67ec8d0-0760-470c-846b-a28f00a556df" class="">这就是发现客户。总结来说，就是去坐头等舱，做找高富帅。研究行业、研究客户，这是一个销售最起始的基础工作，做好它，后面才会有美好的未来。</p><p id="de045f8e-bd55-42b3-b892-64d08848e920" class="">
+</p><p id="8d074c7e-d58e-4dd2-a9c6-5110cfd03d97" class="">销售的源头，就是先把客户拜访做起来，没有客户拜访就没有一切，这是生命线和销售数字来源。</p><p id="7f90255b-4519-4c95-aa2f-6e5033fb6ef4" class="">那么实现客户拜访最大的问题是，如何找到你的目标客户？再之前，有没考虑过，你的目标客户是谁？</p><p id="c8e79146-a0c7-4c82-afe3-1c6908466609" class="">要找客户，很多途径：</p><p id="6745557a-f477-4aa1-a53c-bb0eb7e56635" class="">1. 寻找行业百强企业，找到前几位的名字，比如医药（包含原厂，流通比如九州通、华润医药、国药）、汽车（包含原厂、汽车零配件、汽车经销商）等。看区域市场的话，要看本地的最大企业，比如新疆要看前三强：广汇实业、特变电工、美克等。</p><p id="fc74cba4-6473-4427-b40a-e94712f47e19" class="">行业市场，比如软件，我们已经签了科大讯飞、华为、中兴、海康威视、广联达、中科创达、神州泰岳、方正集团等，那你要去找紫光、同方、东华、东软、华胜天成、太极、用友等等。你得知道这行业的龙头是谁。这叫做客户研究。</p><p id="c0d13860-4218-4f3e-a991-924600ad2efc" class="">找到客户，知道要找哪些客户最重要。各行业比如地产、金融、快消、零售、物流、航空、教育、医疗、交通甚至地铁等企业名单也要去看下，这些行业的龙头是大部分厂商的目标客户，别漫无目的的去找。接着：</p><p id="fa3dcd6a-ddbc-401e-b173-f87ec01cf25b" class="">2. 去搜索他们的使用和采购关键决策人。途径是：</p><p id="9da66d52-fcf8-4950-99f0-1a8139cebc66" class="">1）LinkedIn，通过搜索企业名称、HR等关键词，加联系人，然后发资料、约拜访。</p><p id="b15bc696-6c09-400b-a049-c259325991fd" class="">2）熟人介绍，看朋友圈谁跟这些目标企业熟悉，要主动去问，最先问自己的好朋友、闺蜜，只有他们愿意帮你，最早一批客户一定是通过熟人介绍的。</p><p id="8f80bd0a-221c-420f-8173-ec8fc19eb88e" class="">3）微信群混进去，一通乱加，不要想不要怕被拒，自我介绍，发资料，然后约拜访，自己朋友圈也多发我们SHL的东西和文字，让人家知道你到全球最好的测评公司，也会主动找你问你了解信息。我看你们有人朋友圈发很少，那就不是销售行为。</p><p id="78235121-0379-45e6-8742-02107aa2ef98" class="">4）找朋友提供客户名单，给他们发邮件，Cold Call约拜访，这是很难的一项工作，但是是电话销售的基本功。</p><p id="08bb3925-ff63-4917-892a-9151548d6239" class="">5）客户介绍客户，有的客户进入新的企业会直接跟你商量采购，这时后进入商机创造的良性状态。</p><p id="3eab2924-0250-49ae-8b89-f9950c658798" class="">6）混进市场上的行业大会，几百上千的参会费不要吝惜，值得的，到大会跟前几排到嘉宾交换名片，挨个加。</p><p id="cb3f21ae-8b85-40a2-a45a-338f742feae7" class="">7）混进一些朋友的饭局，结交HR，或业务高管。</p><p id="1b3314d6-5524-4f34-ab2c-1e3341371b72" class="">8）找客户还有个办法，这是我团队一个销售发明的，他找了个金融行业猎头公司，开了个经验分享会议，给我们一个议程，我去讲了一个小时。然后很多金融客户就是这么来的。最近一场有个著名企业的CHRO参加了这次会议，听完马上就约我们交流，很快20多万主要是领导力建模就搞定了。跟伙伴比如猎头公司、软件公司等联合做一些小活动。这些活动每个销售都可以组织，产生的商机一般全部归销售个人，已经有销售跟踪的例外。其他的销售不参加。对于性格内向、比较害羞的销售，这个找客户方法很合适。</p><p id="35191938-45a1-40db-8786-a268970e9084" class="">9）其他你能想到的任何办法。</p><p id="7b237f2f-70ec-4bdc-baad-b558e7a7207a" class="">从找客户来说，方法是人想到的，阿里巴巴最早的扫楼，也都是地推行业至今最为有效的绝招呢。</p><p id="a5e5ddd2-85ec-4c4e-bd2d-5fba469d9ad9" class="">没有一件工作是轻轻松松的，关键是要用心去想，主动去做，总能找到办法。遇到问题就退缩的人，什么工作都做不好。</p><p id="dfee23e0-0455-40cd-a888-900ef06d533c" class="">人的成长，都是因为你解决了一个个问题，逾越了一个个障碍，突破了一个个极限，最后成为一个全新的强大的自己。</p></div></article></body></html>

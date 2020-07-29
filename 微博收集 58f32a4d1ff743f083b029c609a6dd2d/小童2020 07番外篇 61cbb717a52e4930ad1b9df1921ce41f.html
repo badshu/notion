@@ -1,0 +1,641 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>小童2020.07番外篇</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="61cbb717-a52e-4930-ad1b-9df1921ce41f" class="page sans"><header><h1 class="page-title">小童2020.07番外篇</h1><table class="properties"><tbody><tr class="property-row property-row-select"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesSelect"><path d="M7,13 C10.31348,13 13,10.31371 13,7 C13,3.68629 10.31348,1 7,1 C3.68652,1 1,3.68629 1,7 C1,10.31371 3.68652,13 7,13 Z M3.75098,5.32278 C3.64893,5.19142 3.74268,5 3.90869,5 L10.09131,5 C10.25732,5 10.35107,5.19142 10.24902,5.32278 L7.15771,9.29703 C7.07764,9.39998 6.92236,9.39998 6.84229,9.29703 L3.75098,5.32278 Z"></path></svg></span>作者</th><td><span class="selected-value select-value-color-purple">小童看天下</span></td></tr><tr class="property-row property-row-last_edited_time"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedAt"><path d="M6.98643729,14.0000972 C5.19579566,14.0000972 3.40419152,13.3106896 2.04245843,11.9323606 C-0.681017475,9.21200555 -0.680780251,4.76029539 2.04293482,2.04012507 C4.76664406,-0.68004331 9.22427509,-0.68004331 11.9480135,2.04013479 C13.272481,3.36277455 14,5.1330091 14,6.99552762 C14,8.87640182 13.2721894,10.6285043 11.9480135,11.9509302 C10.5679344,13.3105924 8.77756503,14.0000972 6.98643729,14.0000972 Z M10.2705296,7.00913883 L10.2705296,8.46099754 L10.2705296,8.65543362 L10.076181,8.65543362 L8.6543739,8.65543362 L5.72059514,8.65543362 L5.52619796,8.65543362 L5.52619796,8.46099754 L5.52619796,5.52541044 L5.52619796,3.37946773 L5.52619796,3.18502193 L5.72059514,3.18502193 L7.17253164,3.18502193 L7.36692883,3.18502193 L7.36692883,3.37946773 L7.36692883,6.81467358 L10.076181,6.81467358 L10.2705296,6.81467358 L10.2705296,7.00913883 Z M12.1601539,6.99552762 C12.1601539,5.61697497 11.6190112,4.32597154 10.6393933,3.34769528 C8.63253764,1.34336744 5.35197452,1.34061603 3.34153136,3.33944106 C3.33868273,3.34219247 3.33607716,3.34494388 3.33322852,3.34769528 C1.32397148,5.35459953 1.32372842,8.63641682 3.33322852,10.6433794 C5.34295224,12.6504489 8.62968901,12.6504489 10.6393933,10.6433794 C11.6190112,9.66506426 12.1601539,8.37408027 12.1601539,6.99552762 Z"></path></svg></span>最后编辑</th><td><time>@Jul 28, 2020 5:10 PM</time></td></tr></tbody></table></header><div class="page-body"><p id="3212ee5e-dfc1-4572-b3f8-498d6261548e" class="">先进的思想要有先进的人；先进的人要有先进社会关系；先进的社会关系要有资产阶级社会；先进的资产阶级社会要有合理的生产与再生产。毛泽东总结是“儒家社会阻碍了中国进步”。列宁晚年就是认识到必须进行资产阶级革命。</p><p id="650b65ba-4483-4cf3-b335-b056c4b8dc84" class="">
+</p><p id="220f3005-36fb-4dab-ac33-4fc59e064520" class="">没有内循环和外循环这一说。空间=时间，时间是空间的运动形式，空间是时间的存在形式，时间通过物质表现出来。因此，本国城市的空间的科学性反应与世界的关系，世界的关系通过城市空间被反应出来。内循环和外循环这种区分反应什么时间关系？</p><p id="70873f8b-1a8a-46d3-866c-245b2cab7ca3" class="">
+</p><p id="74eff3b8-caba-4294-b959-15320b9f67f1" class="">马克思《政治经济学》讲的，国家必须放弃为人民奋斗的反动幻想，而转变为对每个人自由发展的社会关系的管理。也就是由封建时代的国家以生存权、发展权为目的的反动认识，转变为通过增进社会关系发展人权以创造财富的现代世界文明。</p><p id="a0e533aa-bbd3-4eb1-a00d-9b5b47ce69d8" class="">
+</p><p id="e1f73de2-b81d-4b24-9575-28a690bc079b" class="">个人的生存权和发展权是由社会关系决定的，因此国家和个人不是直接关系，而是间接关系。个人依靠社会关系发展和生存，国家通过保护和发展社会关系推动人的发展。在马克思主义中，国富=民穷；民富=国强。所以恩格斯说：国家在任何意义上都是不能独自发展的。</p><p id="6c2a2c30-b2fd-44a3-a0bf-476428ba96ea" class="">
+</p><p id="18fed4e2-b666-4781-9cd1-8d7821295363" class="">封建主义按照马克思讲，就是以人民的名义，并为人民的幸福而奋斗的思想，并以行政权进行统治的形式，而且是真心实意的，纯洁的政治理想和目标。封建主义的政治思想就是纯洁的理想、原则和目标，封建主义的区别恰恰都是真心实意的如何为人民奋斗的，只是观点不同。这一点反而被马克思恩格斯定性为反动，所以共产主义同盟与这种纯洁的、即非科学的社会主义和共产主义派别进行了坚决斗争，因为这种理想不可能实现，会导致比奴隶制都不如情况。</p><p id="5279500e-1518-4cb1-9dae-b80882b69fc8" class="">马克思主义与空想社会主义或共产主义的区别在于：马克思主义在政治思想中没有任何善良的、崇高的、纯洁的政治的愿望、理想或目标，而是对资本主义生产方式本身的分析。这是马克思主义科学特征。</p><p id="a11a311c-6ab6-457b-babd-30577f3478ce" class="">而空想社会主义和共产主义相反，他们的理论中充斥各种崇高的政治思想和行动指南。这是封建主义的思想，或小农、小资产阶级意识在资本主义生产方式中的表现，因为他们只看到资本主义“坏”的一面，而不能将其理解为这恰恰是无产阶级解放的因素，恰恰是全人类获得解放的历史画卷的展开，是真正的科学开始的地方。</p><p id="1127c01d-bffe-41ed-abda-6f4e26968c59" class="">
+</p><p id="848b9dc5-b34f-4472-97fb-3057dbbd2446" class="">国内网络上的所有比较有代表性的言论，美国方面都会收集，而且非常仔细。尤其是美国使馆微博下的评论更会收集。粉红正能量以为骂别人能让别人怕；自我吹嘘能让中国人自豪，那好，人家就当真了。转过头在现实中跟中国玩真的。正能量嘴爽了，中国政治经济付出代价。内部维稳的措施，变成出门挨打的要求。</p><p id="e5c52ed1-d349-4ef1-ad85-1085e1944a29" class="">正确的思想、想象属于物质力量，中国人不认为思想是物质力量，所以认为胡说八道也没事，这是中国屡次陷入历史周期律的根本原因。</p><p id="e1f91398-f496-47d8-a12f-b8dc4463366b" class="">
+</p><p id="64af0890-e4a0-4541-89d9-9c7de41c6556" class=""><a href="https://weibo.com/7481947269/JcNTF6vsw?from=page_1005057481947269_profile&amp;wvr=6&amp;mod=weibotime">今天 10:09</a> 来自 <a href="https://app.weibo.com/t/feed/6AF9oC">iPhone 11 Pro Max</a> </p><p id="7855fc25-ad89-4b46-8659-cd4efe55e501" class="">橙县讲话是历史唯物主义的，而不是意识形态的，这对于理解双方之间关系的性质是很重要的，也就是说，当以历史唯物主义确定斗争的性质后，就再也没有回头路了。因此这一政策的执行将会执行到底，因此不要存在任何幻想，绝不会有任何妥协。而且必须清楚，这一政策所动员的全世界的核心力量，这些力量也必然跟随，差别只不过是各国执行的力度大小，但不会不去做。</p><p id="1afe7b84-a095-4b38-aabb-b6fa5e0f437e" class="">中国的那些所谓马克思主义理论家只不过是使用了历史唯物主义的概念和范畴中的儒家思想。而在西方国家的理论、情报分析和学术工作中，历史唯物主义是通行的、唯一可行的研究方法，这一点与政治信仰无关，而是理论和学术工作的必然要求。例如诺贝尔奖得主希克斯爵士在《经济史理论》中所指出的：“大部分想要写通史的人还是会选择马克思的理论，因为并没有更好的理论可供运用。《资本论》在百年后的今天，仍然是杰出的理论巨著。”</p><p id="b6de61ed-07d1-4ddb-82f0-494e8e15ed90" class="">而马克思的理论的核心就是告诉全世界，资本主义生产关系的发展首先必须与意识形态展开斗争。如果不与意识形态的政治形式进行斗争，只着眼于经济发展，那么这种在经济上的放任将发生严重的后果。只有在与意识形态斗争的胜利后才能确保和平。所以我们看到马克思恩格斯首先选择与形形色色的社会主义和共产主义的派别进行斗争。</p><p id="b622b99c-6f12-4e2b-ae4e-bbf953a76f41" class="">随着全球化的发展，与意识形态的斗争取得了全世界的形式。今天的世界形势日益取得了与马克思理论相统一的形式。在过去马克思主义只停留在学术中，因为马克思所描绘的场景还没有充分的展现出来。但是正如世界各国的思想家，如阿特都塞、萨特、福柯、德力达、弗洛姆、马尔库塞、霍布斯鲍姆等等等人所指出的，保卫马克思就是保卫世界。</p><p id="222dbea0-bbea-48d2-bb7f-606aa314a9fa" class="">正如霍布斯鲍姆在《论历史》中指出的：“20世纪的意识形态、政治、阶级与解放的斗争仍在进行，让这一天的到来仍不可想象。在可预见的将来，我们仍要在历史学内外为马克思及马克思主义辩护，以对抗那些从政治或意识形态立场来放言攻击的人们。为了做到这一点，我们还要护卫历史学，并且坚持主张人类有能力了解世界是如何演变至今日的，以及人类能够拥有更好的未来。”这篇讲话是在1983年，而今天他不可想象的斗争场景来到了我们面前。</p><p id="ed995540-74b9-47e5-8666-e6ce51867ca6" class="">他在文章说，当年在英国剑桥大学的年轻的共产党中流传着一个笑话：“共产主义的哲学家是维特根斯坦学派的，共产主义经济学家是凯恩斯学派的，共产主义的文学家则是利维斯的门徒。历史学家呢?他们完全是马克思主义者。”</p><p id="a678989d-6cbb-4a9f-8c43-75dd1124b8cf" class="">如果说过去的马克思主义停留在这些学术中，而今天随着全球化的发展，马克思理论中所指导的斗争形式和方法已进入到对全球化的治理中。如果一个民族还不警醒，那么巨大的灾难将会降临。正如恩格斯指出的：“一个民族要站在科学的最高峰，就一刻也不能没有理论思维。”</p><p id="a630aca9-ac81-4433-9162-a3a21a38d2df" class="">
+</p><p id="0edfa439-6df4-4b4f-aafd-342f8283c04f" class=""><a href="https://weibo.com/6816067977/Jc7Fwlb1H?from=page_1005056816067977_profile&amp;wvr=6&amp;mod=weibotime">7月20日 22:39</a> 来自 <a href="https://app.weibo.com/t/feed/6AF9oC">iPhone 11 Pro Max</a> </p><p id="f440d680-8631-4535-b39f-5ba095bfb0b7" class="">有人还把自己当成紫薇圣人，看推背图以为美国必败。推背图42像曰：有客西来　至东而止，木火金水　洗此大耻。炎运宏开世界同，金乌隐匿白洋中，从此不敢称雄长，兵气全销运已终。“且不说这是迷信，就是真能应验，对于南海或台湾来说，大陆是西边。美国CIA认为，解除中国武装在南海和台湾。是偶然吗？ 要相信科学，学习科学，才能知道中国今天面对的是什么。靠迷信等于是把十四亿人当肉猪卖掉。自然法则是不可抗拒的，资本主义生产关系本身就是自然法则。这是自然经济时代的思想不能理解的。</p><p id="fbff70c5-af1f-450e-b241-5732bad88383" class="">
+</p><p id="42093dfc-6adc-46da-bbda-2c01f8fea96b" class=""><a href="https://weibo.com/6816067977/JbX3degOj?from=page_1005056816067977_profile&amp;wvr=6&amp;mod=weibotime">7月19日 19:37</a> 来自 <a href="https://app.weibo.com/t/feed/6AF9oC">iPhone 11 Pro Max</a> 已编辑</p><p id="dc76c6d2-dc59-42d7-be2c-d5fa9f34fe98" class="">马克思主义是一个全新的世界观，没有这种世界观，自然科学不可能取得跨越式进步。一百年以来像物理学、生物学等这些学科，包括数学原地踏步的原因在哪里呢？很简单，世界观被限制住了，或者说基础科学没有取得突破。所以麻省理工学院院长在引力波发现后的声明中说过：“没有基础科学，创新只能下课打小闹”。</p><p id="d7999f44-7983-42ae-abbd-79b61bf8eda2" class="">人们更容易接受物理学家、数学家、生物学家的理论，但这些科学家受什么思想指导？受世界观。没有科学的世界观，自然科学就不可能取得大的进步。世界观是科学的灯塔、目标、导航、参照物、基准、字典。因为自然科学各个领域都是非常狭窄的、孤立的领域，没有世界观就不能照亮它们需要探索的领域。在本领域中摸索，只能小打小闹。</p><p id="337407f4-4182-4b3a-9abb-e7a86ed6eb1b" class="">马克思的理论框架或世界观多么宏大？咱们看看。中国古人讲“天人合一”，但这只是一厢情愿的想象。这种观念在西方也有悠久的历史，但是这在西方是一个自然科学问题。例如毕达哥拉斯的“万物皆数”；18世纪德国的洪堡提出“万物互联“的学说；19世纪许多科学家赫胥黎、斯宾塞、达尔文等认为物理环境塑造生物，生物塑造环境。</p><p id="86458460-0fca-4570-a02a-7021bdd8fa22" class="">而马克思发现政治、经济、社会和自然界是一体的。但是由于他的理论框架非常大，这个问题没有被引起充分关注，现在还没有对他的思想体系进行完整梳理，这个以后我会出版，大家一定会认识到确确实实是伟大的科学著作。</p><p id="368736b3-497e-4fd3-8c62-f01a8a0779c5" class="">政治问题引发气候变化给人感觉很难以想象，但是随着物理科学、地质学等自然科学的发展，已经可以证明，答案是肯定的。第一个提出生命直接塑造地球的是俄罗斯地质学家沃尔纳斯德的著作《生物圈》，他认为生命是最具威力的地质力量，这种力量与时俱进。”</p><p id="ec1e01e3-b8d4-4ca6-95db-4c367b7fcd2a" class="">正如马克思早就看到的，资本主义生产关系是一部自然史，人类将在资本主义生产方式中再造整个自然界并获得解放。1995年美国普利策奖得主，哥伦比亚大学教授乔纳森·韦纳的著作《下一个一百年》指出：“工业革命是精心动魄的地质学事件。”</p><p id="4b3caaeb-d4b4-48d8-8753-6c2cc5417b68" class="">物理科学更做出了肯定的回答，人体强大的信息携带能够充斥到全宇宙。麻省理工学院理论物理学家、量子电动力学巨擎费里曼·戴森经过测算指出：虽然令人惊讶，但结论证明是完全可以，而且不需要很大能量就可以做到。正如马克思说：“人们能够自由地获得世界范围内的最大量的信息，才能得到完全的精神解放。”</p><p id="0f2d7437-7dff-4883-bd6e-4bf15e2330fa" class="">正如马克思当年说的：“环境的改变和人的活动或自我改变一致，只能被看做并合理的理解为革命的实践。”正如恩格斯对马克思这是一条纲领的评价：“包含着新世界观的天才萌芽的第一个文件”。</p><p id="d32d95bf-e90a-4a61-9753-dacfe5118d58" class="">所以不要忽视政治和经济问题的科学性而凭空想象或用意识形态出发，随意出台政治、经济等政策，而引发巨大的自然和社会灾难。一个国家政治经济伦理对个人造成的影响，就是对环境，甚至宇宙造成影响。著名物理学家薛定谔指出的：“伦理学上的价值判断在生物学上发挥作用似乎是：它是人类转向社会性动物的第一步。”</p><p id="eec52926-912f-46a3-b988-a1576718cec5" class="">之所以气候还不能完全受人们的控制和影响，在抽象的总结上可以说，那正是由于人还没获得最后的解放的过程中的现象，而不是不能。释迦摩尼生下第一句话就是：“天上地下，为我（人）独尊！”</p><p id="2b05043c-06bb-4c5b-8b38-00c09ec9ee8c" class="">
+</p><p id="3391d35f-a4ed-40db-af69-86d63b09c244" class=""><a href="https://weibo.com/6816067977/Jc6UfpmTl?from=page_1005056816067977_profile&amp;wvr=6&amp;mod=weibotime">7月20日 20:43</a> 来自 <a href="https://app.weibo.com/t/feed/6AF9oC">iPhone 11 Pro Max</a> </p><p id="3a84402b-c085-47b2-b8bb-d83bcd78e620" class="">它想引诱中国海空军出动，然后全歼。而且中国核武器只能通过094潜艇游弋到太平洋后才可能对美国产生威胁，所以美国在南海站住脚就等于中国没有核武器。因为中国的陆基发射不可能有对美国威胁，况且敢发射陆基，俄罗斯就揍中国。所以南海出动目的很明显嘛。</p><p id="9feb1f15-7656-4f06-8170-903e46d0abde" class="">陆基军事地图中美国是在中国的上方，没有太平洋。美国本土、加拿大、阿拉斯加、俄、中这么排列的。你们看的是民用地图。你想想看，核武器经过在俄上空，你敢保证它不误判？另外我敢保证，中国跟美国动手，俄就是《让子弹飞》里的武智冲，绝对打中国向美国卖好。</p><p id="a16866b7-2cf3-4689-8ec5-27af7c034795" class="">
+</p><p id="f136dd94-5ee0-4b16-96e1-fc68b8bbfc6e" class=""><a href="https://weibo.com/7481947269/JcfXY3L5R?from=page_1005057481947269_profile&amp;wvr=6&amp;mod=weibotime">7月21日 19:47</a> 来自 <a href="https://app.weibo.com/t/feed/6AF9oC">iPhone 11 Pro Max</a> </p><p id="33098538-281a-4adb-9a00-cf0a16a7973f" class="">正确的思想、想象属于物质力量，中国人不认为思想是物质力量，所以认为胡说八道也没事，这是中国屡次陷入历史周期律的根本原因。</p><p id="c68f9b0b-1709-446d-8d3b-74ede97720d5" class="">
+</p><p id="7b0a040e-7c3a-48b5-9f40-2467c466ef9e" class=""><a href="https://weibo.com/7464703428/Jd7hAjqOi?from=page_1005057464703428_profile&amp;wvr=6&amp;mod=weibotime">7月27日 11:30</a> 来自 <a href="https://app.weibo.com/t/feed/6AF9oC">iPhone 11 Pro Max</a> 已编辑</p><p id="add6bddd-a1f4-4a72-af4a-8dc191d22901" class="">马克思说过：“每个了解一点历史的人也都知道，没有妇女的酵素就不可能有伟大的社会变革。社会的进步可以用女性的社会地位来精确的衡量。”他不仅在理论上这样说，在现实中更是以身作则。李卜克内西说马克思只要遇到打女性的人，就会亲自动手把男的打了。有一次他和马克思坐着马车在街上，听到人群中有女性在呼救，马克思像闪电一样跳下车冲进入群。后来发现是一位女性喝醉了，她丈夫在劝她回家。从这个事看出马克思对女性权利的重视。美国哲学家杜娜叶夫斯卡娅称政治家、思想家、女权主义要从马克思那里学习伟大的思想境界和科学的理论斗争形式才能赢得自身的解放，从而推动历史的前进。正如马克思说的，历史是随着女性权利的进步而发展的。</p><p id="13cd1900-d2ff-4202-8ba5-99c79fd1c27a" class="">
+</p><p id="59901191-a300-4ee7-8d15-cefe3e6cfe6c" class=""><a href="https://weibo.com/7464703428/Jdc2JfCQI?from=page_1005057464703428_profile&amp;wvr=6&amp;mod=weibotime">7月27日 23:38</a> 来自 <a href="https://app.weibo.com/t/feed/6AF9oC">iPhone 11 Pro Max</a> 已编辑</p><p id="7a51034d-8d5f-4a5e-85d6-084288457593" class="">美国的传统是不进行意识形态斗争的，它是实用主义，例如杜威的实用主义哲学。所以美国的哲学跟欧洲不同，关于意识形态的东西很少，因为美国没有经历过封建主义，它没有欧洲哲学那种从封建主义逐步成长起来过程和土壤。</p><p id="f34fdc9f-edf5-4c1c-b9fd-09a82bcfffd7" class="">所以美国不采用社会主义、共产主义等政治概念，并不代表它不具有马克思主义的内容。它用自由主义和资本主义进行概括了。但它的内容是不断变化的、发展的。例如德国思想家桑巴特、英国历史学家布莱克本等人恰恰认为美国最准确的实现和验证的马克思主义的理论。</p><p id="ac745ac4-1aed-40e9-883f-200a4ea78bf4" class="">正如当年美国总统候选人诺曼·托马斯说：美国人民不会主动采取社会主义，但会以“自由主义”的名义采纳社会主义纲领中的每个片段。因为欧洲的社会主义和共产主义的理论中的很多内容是包含与封建主义的斗争的，而美国没有这种政治斗争需要。</p><p id="2bbc746f-251a-4a8b-b2e3-cf7fa57ca1a8" class="">但是马克思的关于资本主义的理论、历史唯物主义分析方是被美国普遍采用的。所以美国产生了一些马克思主义学派，而且其中一些人都是学术领域中的大家。</p><p id="5c621c84-f563-42ef-9f55-55bb82dc7e94" class="">因此不能用美国是否采用社会主义或共产主义的名义去看问题，而要看实际内容是什么。今天中国面对的就是典型的马克思主义进攻形势，是许多年前的马克思主义理论家的研究成果，今天拿出来了。当年的定义美国将完成世界历史上第一次革命，而不是国家的革命了。</p><p id="0a2fc212-459c-4089-b107-4defbc13d300" class="">
+</p><p id="c40db95a-2dd1-4efb-9eaa-76a90717784b" class=""><a href="https://weibo.com/7464703428/JdbFBvSyp?from=page_1005057464703428_profile&amp;wvr=6&amp;mod=weibotime">7月27日 22:41</a> 来自 <a href="https://app.weibo.com/t/feed/6AF9oC">iPhone 11 Pro Max</a> </p><p id="641a2f56-6466-4bd2-8ef8-4112a48f6cb1" class="">经常有不懂装懂的人把阶级跟人或钱直接联系起来，然后过来杠一下。太讨厌了，不学无术的东西。再说一次，阶级性质是一定的阶级关系中的利益划分，与人没有直接关系，它是经济学范畴。打个简单比方，省长的儿子和农民的儿子之间的区别不是人的区别，而是社会地位的区别，而地位是社会关系的表现，社会关系是生产力与交换关系决定的。那么两个儿子处于不同的社会关系中，就意味着拥有不同的人生，换句话说，出生于这两个不同家庭的孩子就是不同的阶级关系的承担者。因此研究阶级问题不是研究人，而是研究社会关系本身。人的表现只不过是其阶级关系中的相应的表现。</p><p id="e459650c-7791-4a0e-a643-01f0ac0bfe90" class="">
+</p></div></article></body></html>

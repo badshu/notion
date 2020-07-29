@@ -1,0 +1,636 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>2020年7月</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="20830540-5af0-4466-82b3-c9c294b7a878" class="page sans"><header><h1 class="page-title">2020年7月</h1><table class="properties"><tbody><tr class="property-row property-row-select"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesSelect"><path d="M7,13 C10.31348,13 13,10.31371 13,7 C13,3.68629 10.31348,1 7,1 C3.68652,1 1,3.68629 1,7 C1,10.31371 3.68652,13 7,13 Z M3.75098,5.32278 C3.64893,5.19142 3.74268,5 3.90869,5 L10.09131,5 C10.25732,5 10.35107,5.19142 10.24902,5.32278 L7.15771,9.29703 C7.07764,9.39998 6.92236,9.39998 6.84229,9.29703 L3.75098,5.32278 Z"></path></svg></span>作者</th><td><span class="selected-value select-value-color-blue">kuhasu</span></td></tr><tr class="property-row property-row-last_edited_time"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedAt"><path d="M6.98643729,14.0000972 C5.19579566,14.0000972 3.40419152,13.3106896 2.04245843,11.9323606 C-0.681017475,9.21200555 -0.680780251,4.76029539 2.04293482,2.04012507 C4.76664406,-0.68004331 9.22427509,-0.68004331 11.9480135,2.04013479 C13.272481,3.36277455 14,5.1330091 14,6.99552762 C14,8.87640182 13.2721894,10.6285043 11.9480135,11.9509302 C10.5679344,13.3105924 8.77756503,14.0000972 6.98643729,14.0000972 Z M10.2705296,7.00913883 L10.2705296,8.46099754 L10.2705296,8.65543362 L10.076181,8.65543362 L8.6543739,8.65543362 L5.72059514,8.65543362 L5.52619796,8.65543362 L5.52619796,8.46099754 L5.52619796,5.52541044 L5.52619796,3.37946773 L5.52619796,3.18502193 L5.72059514,3.18502193 L7.17253164,3.18502193 L7.36692883,3.18502193 L7.36692883,3.37946773 L7.36692883,6.81467358 L10.076181,6.81467358 L10.2705296,6.81467358 L10.2705296,7.00913883 Z M12.1601539,6.99552762 C12.1601539,5.61697497 11.6190112,4.32597154 10.6393933,3.34769528 C8.63253764,1.34336744 5.35197452,1.34061603 3.34153136,3.33944106 C3.33868273,3.34219247 3.33607716,3.34494388 3.33322852,3.34769528 C1.32397148,5.35459953 1.32372842,8.63641682 3.33322852,10.6433794 C5.34295224,12.6504489 8.62968901,12.6504489 10.6393933,10.6433794 C11.6190112,9.66506426 12.1601539,8.37408027 12.1601539,6.99552762 Z"></path></svg></span>最后编辑</th><td><time>@Jul 22, 2020 4:48 PM</time></td></tr></tbody></table></header><div class="page-body"><p id="51737fb8-e374-41f9-a6a8-9c63ae821808" class="">各国央行现在还大体保持控制力，但是美联储开启无限量宽松以来，大家会忽略一个事情，就是各国央行的能力，只有量的差别，并没有维度差距，那就意味着，政策具有传导效应，区别只是传导多少。央行的货币政策提供了一个“舒缓”功能，但并不能根本解决生产力问题。也就是#美联储#押宝在企业创新和生产力部分，相信人类为了未来而不断努力奋斗，而失业率不是主要目标只是央行参考变量，失业率是政府目标。美联储自己对大萧条、内部革命、局部战争甚至全面战争的情况已经估算过了，但是社会资源分配模式的革新并没有计算评估。那么08年的情况就又会发生，牺牲谁的利益，掠夺谁的利益。这种情况看似无解，会陷入一个一个的循环，但是，经济环境中，各个经济利益体和经济群体内部，并非铁板一块，利益的争夺会限制央行的能力范围和路径，以及经济路径的发展。用上个世纪的方法应对？促进更为完善的社会资源与财富分配，为半年后做准备～这个过程中，我们投资者会有很多可以确立几十年优势的机会，所以绝对不可人浮于事，绝对不可放松努力奋斗，当然，方向得对</p><p id="f136dd8c-077b-42e2-840f-1a7b3e71a131" class="">
+</p><figure id="591a8328-bdb5-4405-9c24-4c70c973fcb0" class="image"><a href="2020%E5%B9%B47%E6%9C%88%20208305405af0446682b3c9c294b7a878/Untitled.png"><img style="width:690px" src="2020%E5%B9%B47%E6%9C%88%20208305405af0446682b3c9c294b7a878/Untitled.png"/></a></figure><p id="bae83420-a964-4591-8b31-577ed2552b51" class="">
+</p><p id="b4f3dbb7-4f81-4a90-b854-c2feed007fda" class="">追求资源的口径垄断，本质上买办经济模式，容易滋生PE腐败，影响经济结构优化。现在太多的一级市场机构把二级市场的操纵市场联合抬轿，投行的口径垄断结合在一起，但是没有监管。区别在于是靠企业发展增值，还是主要靠估值击鼓传花增值。</p><p id="458bcd0e-0a12-48a8-a11c-ef0b29be08ef" class="">
+</p><p id="a0dddad7-8977-4a0c-9499-d401b1d5f00f" class="">相对于华裔（除ABC，BBC）的互害，印度裔在抱团上可圈可点。所以最近几年看到的是，凡是混的好的必定特立独行，周围都是欧美人，混的不好扎堆，但各有心思，互相利用。微软CEO纳德拉在《刷新》一书中写道，任何组织和个人达到某个临界点时，都需要自我刷新，而自我刷新的三个关键步骤就是：拥抱同理心，培养「无所不学」的求知欲，以及建立成长型思维。</p><p id="c90ee653-d82e-491c-bd32-3297afca656b" class="">
+</p><p id="d12a60f3-8e13-4d16-aadd-8c9a1f98fd42" class="">很多人对个人信用和合规的重视程度不高，甚至经常耍一些小聪明，来实现各种目的，加上社交网络或者行业不正之风的诱导下轻易就越过法律法规红线，但是只要按照合规的追究法律责任，基本上十几年学白上了，一辈子都会背上污点，比如这个高材生。我们可以非常容易的分辨一个金融从业者是否有欧美从业经验，虽然「华尔街之狼」等等影视作品经常渲染违规操作，但实际上，哪怕你开车违章没及时缴纳罚款，坐地铁公交逃票，也会影响信用记录的，很多时候这种看似不起眼的小事，会毁掉整个职业生涯，甚至人生。尤其现在很多年轻人刚步入社会，声色犬马，灯红酒绿的社会和社交网络环境会有影响，务必要恪守底线，依法合规。当我们提到合规，一般有两个层面，一个是明文规定的法律法规，行业规章制度，一个是道德层面，即不影响公平性，我们常会看到监管条款有一条“监管部门认定的其他情形”，即是对法律法规尚未明文规定的内容的补充。原则上，是要看是否尊重他人为基本出发点，尊重他人的权利，尊重自己的权利。</p><p id="6c29380f-f8b8-4f4a-86a1-a244ffc92992" class="">
+</p><p id="6da8eb52-8f00-49e8-9de2-cc9c172ca00f" class="">你们可能不知道，很多大佬翻船和大部分人亏钱，是在牛市，牛市的本质是一种财富重新分配。图2是大嘴Ray，图3蚂蚁金融架构，图4是250年大宗价格，图5深圳房产新政，图6黑石加强医药生物业务直接威胁复兴高瓴本土机构，图7特斯拉，图89资产回报。很多跟大家在媒体上看到的和感受到的不同。</p><p id="1a9a9280-33c6-4a34-8337-61e1512d9773" class="">
+</p><figure id="b6978fae-d7f0-4fb5-b702-d98825eb2a45" class="image"><a href="2020%E5%B9%B47%E6%9C%88%20208305405af0446682b3c9c294b7a878/Untitled%201.png"><img style="width:690px" src="2020%E5%B9%B47%E6%9C%88%20208305405af0446682b3c9c294b7a878/Untitled%201.png"/></a></figure><p id="84470f27-6d3d-4ca2-8f28-260430860da1" class="">
+</p><figure id="4a372a14-5df0-457f-a924-26e756dad652" class="image"><a href="2020%E5%B9%B47%E6%9C%88%20208305405af0446682b3c9c294b7a878/Untitled%202.png"><img style="width:690px" src="2020%E5%B9%B47%E6%9C%88%20208305405af0446682b3c9c294b7a878/Untitled%202.png"/></a></figure><p id="8767071d-37b1-4e26-a7a1-8abeb87fb2a0" class="">
+</p><figure id="1320054c-0933-4b14-b967-cd8fff42149b" class="image"><a href="2020%E5%B9%B47%E6%9C%88%20208305405af0446682b3c9c294b7a878/Untitled%203.png"><img style="width:690px" src="2020%E5%B9%B47%E6%9C%88%20208305405af0446682b3c9c294b7a878/Untitled%203.png"/></a></figure><p id="eb148798-3739-42aa-a1c5-4a5dab07e058" class="">
+</p><figure id="b7cf9f40-f58e-49b5-848a-3952ccd66951" class="image"><a href="2020%E5%B9%B47%E6%9C%88%20208305405af0446682b3c9c294b7a878/Untitled%204.png"><img style="width:690px" src="2020%E5%B9%B47%E6%9C%88%20208305405af0446682b3c9c294b7a878/Untitled%204.png"/></a></figure><figure id="eaea5c40-009e-471a-8227-b63354c4a5b8" class="image"><a href="2020%E5%B9%B47%E6%9C%88%20208305405af0446682b3c9c294b7a878/Untitled%205.png"><img style="width:690px" src="2020%E5%B9%B47%E6%9C%88%20208305405af0446682b3c9c294b7a878/Untitled%205.png"/></a></figure><figure id="dcaf41a1-a1fc-40e5-b81c-0729c45b9a65" class="image"><a href="2020%E5%B9%B47%E6%9C%88%20208305405af0446682b3c9c294b7a878/Untitled%206.png"><img style="width:690px" src="2020%E5%B9%B47%E6%9C%88%20208305405af0446682b3c9c294b7a878/Untitled%206.png"/></a></figure><figure id="9a95745f-6b33-4cb5-b0a3-efbf1692ac87" class="image"><a href="2020%E5%B9%B47%E6%9C%88%20208305405af0446682b3c9c294b7a878/Untitled%207.png"><img style="width:595px" src="2020%E5%B9%B47%E6%9C%88%20208305405af0446682b3c9c294b7a878/Untitled%207.png"/></a></figure><figure id="e20074bc-7beb-4875-bbc5-b674d0e0ee77" class="image"><a href="2020%E5%B9%B47%E6%9C%88%20208305405af0446682b3c9c294b7a878/Untitled%208.png"><img style="width:690px" src="2020%E5%B9%B47%E6%9C%88%20208305405af0446682b3c9c294b7a878/Untitled%208.png"/></a></figure><figure id="02870af9-cc2d-4d8b-9fb3-5b185c2cf034" class="image"><a href="2020%E5%B9%B47%E6%9C%88%20208305405af0446682b3c9c294b7a878/Untitled%209.png"><img style="width:690px" src="2020%E5%B9%B47%E6%9C%88%20208305405af0446682b3c9c294b7a878/Untitled%209.png"/></a></figure></div></article></body></html>

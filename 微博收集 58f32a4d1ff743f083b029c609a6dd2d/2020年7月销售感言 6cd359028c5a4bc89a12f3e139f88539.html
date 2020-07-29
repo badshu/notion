@@ -1,0 +1,661 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>2020年7月销售感言</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="6cd35902-8c5a-4bc8-9a12-f3e139f88539" class="page sans"><header><h1 class="page-title">2020年7月销售感言</h1><table class="properties"><tbody><tr class="property-row property-row-select"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesSelect"><path d="M7,13 C10.31348,13 13,10.31371 13,7 C13,3.68629 10.31348,1 7,1 C3.68652,1 1,3.68629 1,7 C1,10.31371 3.68652,13 7,13 Z M3.75098,5.32278 C3.64893,5.19142 3.74268,5 3.90869,5 L10.09131,5 C10.25732,5 10.35107,5.19142 10.24902,5.32278 L7.15771,9.29703 C7.07764,9.39998 6.92236,9.39998 6.84229,9.29703 L3.75098,5.32278 Z"></path></svg></span>作者</th><td><span class="selected-value select-value-color-brown">程时旭</span></td></tr><tr class="property-row property-row-last_edited_time"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedAt"><path d="M6.98643729,14.0000972 C5.19579566,14.0000972 3.40419152,13.3106896 2.04245843,11.9323606 C-0.681017475,9.21200555 -0.680780251,4.76029539 2.04293482,2.04012507 C4.76664406,-0.68004331 9.22427509,-0.68004331 11.9480135,2.04013479 C13.272481,3.36277455 14,5.1330091 14,6.99552762 C14,8.87640182 13.2721894,10.6285043 11.9480135,11.9509302 C10.5679344,13.3105924 8.77756503,14.0000972 6.98643729,14.0000972 Z M10.2705296,7.00913883 L10.2705296,8.46099754 L10.2705296,8.65543362 L10.076181,8.65543362 L8.6543739,8.65543362 L5.72059514,8.65543362 L5.52619796,8.65543362 L5.52619796,8.46099754 L5.52619796,5.52541044 L5.52619796,3.37946773 L5.52619796,3.18502193 L5.72059514,3.18502193 L7.17253164,3.18502193 L7.36692883,3.18502193 L7.36692883,3.37946773 L7.36692883,6.81467358 L10.076181,6.81467358 L10.2705296,6.81467358 L10.2705296,7.00913883 Z M12.1601539,6.99552762 C12.1601539,5.61697497 11.6190112,4.32597154 10.6393933,3.34769528 C8.63253764,1.34336744 5.35197452,1.34061603 3.34153136,3.33944106 C3.33868273,3.34219247 3.33607716,3.34494388 3.33322852,3.34769528 C1.32397148,5.35459953 1.32372842,8.63641682 3.33322852,10.6433794 C5.34295224,12.6504489 8.62968901,12.6504489 10.6393933,10.6433794 C11.6190112,9.66506426 12.1601539,8.37408027 12.1601539,6.99552762 Z"></path></svg></span>最后编辑</th><td><time>@Jul 22, 2020 1:25 PM</time></td></tr></tbody></table></header><div class="page-body"><p id="a3747507-5473-4e88-9e31-f48de7c26248" class=""><a href="https://weibo.com/1819698443/J7Vs9FfgU?from=page_1005051819698443_profile&amp;wvr=6&amp;mod=weibotime">6月23日 08:12</a> 来自 <a href="https://app.weibo.com/t/feed/14ybEh">nova5i 2400万AI四摄</a> </p><p id="3193f3ba-f1ea-4514-bf7c-52c2ba4bc2d9" class="">销售队伍就是一支军队，执行远远比有想法重要。军队首先训练的就是统一步调，不带任何怀疑的执行，遵守纪律。没有这些，就没有任何打胜仗的可能。阿里说的“又傻又天真”，是最好的销售，绝对是的。销售是一个严重依赖前人最佳实践的工作，对于小白，从进入公司的第一天起，但凡有一丝的怀疑，最后都有可能活不下来。因为一步错，耽误的就是几个月。</p><p id="e3ede007-f6d4-44fe-b9c4-297ef04afa2e" class="">
+</p><p id="913e315b-6432-4dbe-83e3-2926a00028c2" class=""><a href="https://weibo.com/1819698443/J84NXx42D?from=page_1005051819698443_profile&amp;wvr=6&amp;mod=weibotime">6月24日 08:00</a> 来自 <a href="https://app.weibo.com/t/feed/14ybEh">nova5i 2400万AI四摄</a> </p><p id="660c5a73-5fde-4410-abf9-bc70f6ee31c3" class="">组织要基业长青，要培养每一个层级的领导者。有强大高层领导者（Executive
+Level）的组织，很容易在人才结构上出问题，因为他们天然喜欢找执行者的下属（下一层），这样组织效率会很高。但同时也会埋下失败的种子。执行者很容易再招执行者进来，因为他很难领导未来高潜质的领导者。组织要把每一层级建设的很扎实，必须同时有领导者和执行者，一个混合型的组织，象大厦的墙体，既有钢筋，又有混凝土，才能稳固、坚不可摧。</p><p id="ff96637d-8c95-40ff-856f-0361bc05e113" class="">
+</p><p id="78728107-1309-4781-a1d7-368a66dcacd4" class=""><a href="https://weibo.com/1819698443/J8522ntA0?from=page_1005051819698443_profile&amp;wvr=6&amp;mod=weibotime">6月24日 08:35</a> 来自 <a href="https://app.weibo.com/t/feed/14ybEh">nova5i 2400万AI四摄</a> </p><p id="e92679de-5733-4ed7-a910-bf3629c716f6" class="">总监这个层级，最大的挑战，他开始要：</p><p id="ba3dd060-d4e7-44af-af9e-72197f5e4e50" class="">1.识别和领导领导者，这是个最大挑战；</p><p id="e3259849-95cd-483d-9c88-1471cf5d5fe6" class="">2.开始要构建组织，知道组织是怎么回事；</p><p id="09eadc76-5dcd-40b3-8dc8-95e4b3e362a4" class="">3.开始要思考战略，具备比较强大的商业头脑。这些挑战是做基层管理者时候不曾遇到的。 </p><p id="22ac3bc9-2de6-40b5-b4d1-7da82f09003c" class="">
+</p><p id="e895b713-8f45-442b-ada3-f74cd7eaadd4" class=""><a href="https://weibo.com/1819698443/J8oVCBWy2?from=page_1005051819698443_profile&amp;wvr=6&amp;mod=weibotime">6月26日 11:14</a> 来自 <a href="https://app.weibo.com/t/feed/14ybEh">nova5i 2400万AI四摄</a> </p><p id="e1fff9b2-e122-4fe8-835f-607e6598ec93" class="">国家的治理结构，需要靠一个一个小小的组织单元有效，比如顶层政治活动的三权设计（立法、行政、司法）、区域政治治理结构、经济活动的基本单元——公司治理结构等。从人类实践的历史来看，很多制度设计基于理论或者基于美好的梦想，看起来很美，但实际结果来看很差。国家治理体系和管理太复杂了，已经远远超出人类能够系统思考的智慧，并且在这个领域没有建立起系统的研究框架，很难用实证或者模型的方法来研究。而制度一旦设计错误，可能是几代甚至上百年的代价来承受。因此尊重实践，学习成功历史，是政治领域最有效的办法。邓小平的一个理论，“不管白毛黑猫，能抓住老鼠就是好猫。”也是政治领域最有效的基本方法论。</p><p id="bb5f5a17-3e06-43df-9d2e-ffbb8c06bd28" class="">
+</p><p id="cf79051e-6a3f-4c6d-b6e2-5ebafb3369ad" class=""><a href="https://weibo.com/1819698443/J8Lqrxu5R?from=page_1005051819698443_profile&amp;wvr=6&amp;mod=weibotime">6月28日 20:31</a> 来自 <a href="https://app.weibo.com/t/feed/14ybEh">nova5i 2400万AI四摄</a> </p><p id="1b80fe00-03b9-4fdf-940f-231e0788b7cd" class="">知道老板为什么把你放在那么重要的位置吗？是因为你能力强吗？不是，是因为你能力不够，所以才放心使用你啊。 </p><p id="1c50285f-16da-4748-a0c5-ec5f8879458c" class="">
+</p><p id="f080783b-2e71-4aeb-a2d1-e5383abface0" class=""><a href="https://weibo.com/1819698443/J8LOvbD8b?from=page_1005051819698443_profile&amp;wvr=6&amp;mod=weibotime">6月28日 21:30</a> 来自 <a href="https://app.weibo.com/t/feed/14ybEh">nova5i 2400万AI四摄</a> </p><p id="911c39ed-390a-4924-ab36-a72a808fd394" class="">好销售执行力强，事事有着落，件件有回音。不行的销售，客户跟进个个石沉大海，工作汇报怨天怨地怨人。  </p><p id="89dd4918-d2fd-444c-af17-2c707d578ca7" class="">
+</p><p id="de785644-f12e-49f0-a06c-3a2ee56f742f" class=""><a href="https://weibo.com/1819698443/J8LVu5gIo?from=page_1005051819698443_profile&amp;wvr=6&amp;mod=weibotime">6月28日 21:47</a> 来自 <a href="https://app.weibo.com/t/feed/14ybEh">nova5i 2400万AI四摄</a> </p><p id="f38c42f5-80b7-4664-b3a6-4b4af809c34a" class="">销售自己要有个主张，帮助客户把事确定了，告诉客户该如何做，如何给决策者汇报。你坚定，客户就坚定；你没主张，客户就没主张。 </p><p id="c7bfbfac-d774-4119-ad95-39d31dc96712" class="">
+</p><p id="ba15828f-a942-430d-8266-8888c7960a7e" class=""><a href="https://weibo.com/1819698443/J8LYHfBuY?from=page_1005051819698443_profile&amp;wvr=6&amp;mod=weibotime">6月28日 21:55</a> 来自 <a href="https://app.weibo.com/t/feed/14ybEh">nova5i 2400万AI四摄</a> </p><p id="25e6764b-b907-4bf6-8886-970b5c06a6d4" class="">有些销售，就是随着客户起舞，客户今天一个主意，明天又有一个想法，天天做方案，从来不成单。  </p><p id="9002dbd1-e22a-4a6d-a73e-3d6bdbf5647a" class="">
+</p><p id="3e217823-6589-472d-9ed9-4462f3e7862f" class=""><a href="https://weibo.com/1819698443/J8M63wytP?from=page_1005051819698443_profile&amp;wvr=6&amp;mod=weibotime">6月28日 22:13</a> 来自 <a href="https://app.weibo.com/t/feed/14ybEh">nova5i 2400万AI四摄</a> </p><p id="1b55ddbb-a7a2-40b6-9c61-69f88e4d4762" class="">B2B销售经常会遇到顾问提交不了方案，到不了客户现场，等等等等问题。然后单子没成抱怨顾问。销售需要知道的是：</p><p id="5441a4f7-529b-4523-9c67-dca753209560" class="">1.顾问一般没有时间概念的，你不催他他不会做事。</p><p id="2046dd1b-d383-4e95-a2d1-c61fb9be0333" class="">2.顾问的Ownership不要太指望，因为他可以没有你的这个客户，对他来说多一个少一个没关系的。</p><p id="3b6b9f07-9f11-4249-9e9a-0f785f24a0cd" class="">3.永远记住，销售，对你来说，每一个客户都是你自己的生意，是你的全部。公司里唯独只有你，没有退路！连你的老板都有退路，因为他团队里还有别的销售。</p><p id="25a383b7-c125-40e5-9815-c904f29c2300" class="">
+</p><p id="339c2cd8-8c2f-4956-9710-c995665c6a58" class=""><a href="https://weibo.com/1819698443/J8MfWpu28?from=page_1005051819698443_profile&amp;wvr=6&amp;mod=weibotime">6月28日 22:38</a> 来自 <a href="https://app.weibo.com/t/feed/14ybEh">nova5i 2400万AI四摄</a> </p><p id="eb7dce7a-611c-4e35-83d9-1275a9bcade1" class="">有的销售，在客户很多方案的决策上脑门一拍就定了，比客户还坚决。虽然有时候不见得对，但是没关系啊，后面慢慢在执行中修正。这个能力是天赋，对销售来说特别重要。对于复杂的解决方案，多高明的顾问，有时候也是拿不准，闭着眼睛拍了，没办法的事情。世界那么复杂，谁能想的一清二楚。 </p><p id="5cce321b-7bc1-46df-b0cf-91c55bda244e" class="">
+</p><p id="f13f9c2e-659a-42e7-b5ad-f8419d4032e4" class=""><a href="https://weibo.com/1819698443/J8MFNq4ZY?from=page_1005051819698443_profile&amp;wvr=6&amp;mod=weibotime">6月28日 23:41</a> 来自 <a href="https://app.weibo.com/t/feed/14ybEh">nova5i 2400万AI四摄</a> </p><p id="bfe7afa7-e15f-4747-8303-994cc6409d17" class="">第一次简单的介绍了我们公司业务。同学问我们SHL公司是做什么的？我说做人才评估啊。他问为什么要评估？我说你去买一个公司，是不是要请第三方公司去审计和评估它的资产？你光买了一堆资产么，最重要的资产是什么？是人。我们是全球干这个最专业的，帮你评估人才队伍强不强，关键的人才是哪些。他说我理解了。接着他问，是不是你评估过的公司，哪个好哪个坏一清二楚，就可以决定买不买它的股票。我回答是的。这就是人才盘点，我们的主营业务。</p><p id="d25dee8a-a681-432c-81f4-244714693145" class="">
+</p><p id="9d7da9ed-fe22-4ace-be55-196382038601" class=""><a href="https://weibo.com/1819698443/J98FtFIFX?from=page_1005051819698443_profile&amp;wvr=6&amp;mod=weibotime">7月1日 07:41</a> 来自 <a href="https://app.weibo.com/t/feed/14ybEh">nova5i 2400万AI四摄</a> </p><p id="e3eaba32-380a-4c4b-b712-129348418f60" class="">做企业，要善于学习别人，从别人思想的微光里找到道路。然后路是每个企业家或者有企业家精神的人自己闯出来的。每个做HR、做财务做职能的人，都只能看到局部，只有企业家才能看到全局，系统的找到组织前进的驱动因素。这些因素不是天然就会的，而他要扛着组织往前走，在这个过程中不断试错试出来的。 </p><p id="67ec1cfb-5d4a-41f4-830e-fca2afa49e86" class="">
+</p><p id="b9bc8435-bbbd-426e-8938-9181b2292b24" class=""><a href="https://weibo.com/1819698443/J9ijB53O0?from=page_1005051819698443_profile&amp;wvr=6&amp;mod=weibotime">7月2日 08:14</a> 来自 <a href="https://app.weibo.com/t/feed/14ybEh">nova5i 2400万AI四摄</a> </p><p id="07532865-6ab8-4fd7-8b62-dd2b3732f50b" class="">在小公司做时间长了，容易形成低自尊，为了获得客户认可，仿佛什么都可以付出。一个公司之所以专业和令人尊敬，是因为它有底线，有专业尊严，可以有资格筛选客户。他们提倡“客户第一”，但是是针对值得服务和付出的客户。曾经有个客户的采购专门打电话来问为什么我们不参与他们的竞标，我回复，你们的采购价低者得，不够资格让我们去。</p><p id="c5669f0b-b881-4a5b-a24e-99612a7b0b71" class="">
+</p><p id="a8a3a79e-612e-4b76-9a42-edea12ab4f03" class=""><a href="https://weibo.com/1819698443/J9m4Q4TTr?from=page_1005051819698443_profile&amp;wvr=6&amp;mod=weibotime">7月2日 17:49</a> 来自 <a href="https://app.weibo.com/t/feed/14ybEh">nova5i 2400万AI四摄</a> </p><p id="0e726bc8-e4e9-486f-8156-561db8d12e4d" class="">一个组织，你配置了人员，给他们设置了销售、顾问、运营支持等岗位，再有业务流程，它就会自动运转起来，象有生命一样。这个生命能否动力十足？需要你不断给它加油（这就是动力机制），提升他们的能力（训练、辅导和培训），监控它的运转状态和业绩产出成果。做管理者，再给组织注入愿景、使命和价值观，那就有了灵魂。它会成长变大吗？不一定。要不断调整前进的方向（战略），选拔各团队的领导（领导力）。</p><p id="bbc8b7de-46d9-4c99-a142-1d420a73b20e" class="">
+</p><p id="87f50bee-d1b2-4bfa-8c45-40278470623a" class=""><a href="https://weibo.com/1819698443/J9rNypaQE?from=page_1005051819698443_profile&amp;wvr=6&amp;mod=weibotime">7月3日 08:23</a> 来自 <a href="https://app.weibo.com/t/feed/14ybEh">nova5i 2400万AI四摄</a> </p><p id="34e3ef5a-e2ca-45f5-8c1f-f11103658d76" class="">价格的底线，也是公司的底线，如果没有，生意就没有存在的必要。销售的核心职责之一，就是替公司守住底线。连守住价格这点都不知道的销售，就不配做销售。这点请销售尤其是新销售记住。 </p><p id="33992d12-f193-44b6-9444-14787cc5ddb1" class="">
+</p><p id="fa0b30d9-c73e-48e4-a51f-41d2730e40b0" class=""><a href="https://weibo.com/1819698443/J9rQedaCp?from=page_1005051819698443_profile&amp;wvr=6&amp;mod=weibotime">7月3日 08:30</a> 来自 <a href="https://app.weibo.com/t/feed/14ybEh">nova5i 2400万AI四摄</a> </p><p id="e9e72e6b-c9e0-4fe7-b9d4-7770a30f9287" class="">你的职责，不是一味的向公司传递客户的无理要求，屈服、害怕丢失单子向公司申请免费什么无理要求，而是要不卑不亢的表明态度，让客户明白公司的底线，用诚意和态度说服客户接受公司的专业服务价值。 </p><p id="3dfde31a-cf0a-4b08-838b-9a6f46c81008" class="">
+</p><p id="28a5e998-77ef-4b89-bfce-07e8604a8356" class=""><a href="https://weibo.com/1819698443/J9Ch7AKCz?from=page_1005051819698443_profile&amp;wvr=6&amp;mod=weibotime">7月4日 11:03</a> 来自 <a href="https://app.weibo.com/t/feed/14ybEh">nova5i 2400万AI四摄</a> </p><p id="a4b469d5-a9c4-4804-9a00-bfda356813b3" class="">在业务发展过程中，知道要做什么的能力，远远超过其他能力。我会用90%的时间来思考要做什么，用10%的时间来思考怎么做。 </p><p id="d9b8cdec-94b9-401c-98b3-5767b53be96d" class="">
+</p><p id="5583f9aa-24a6-4737-a5c2-dc12a960b4f1" class=""><a href="https://weibo.com/1819698443/J9MV5j6Vn?from=page_1005051819698443_profile&amp;wvr=6&amp;mod=weibotime">7月5日 14:09</a> 来自 <a href="https://app.weibo.com/t/feed/14ybEh">nova5i 2400万AI四摄</a> </p><p id="bc8d39d1-3b21-41e9-95a6-e11305aa6ebd" class="">理性决策，决策前面有“理性”。很多人决策慢，一开始以为只是因为优柔寡断，仔细观察后才发现，不思考是重要原因。每个决策其实有它背后的逻辑，当销售帮助客户把这个想清楚了，客户就比较容易定。通俗的说，就是给客户一个采购的理由。  </p><p id="cedca09e-911b-434a-b688-efd244b8ad0a" class="">
+</p><p id="a2ae3fab-1e41-419e-a2c0-e2c0a2cddf5f" class=""><a href="https://weibo.com/1819698443/J9QbRxT0S?from=page_1005051819698443_profile&amp;wvr=6&amp;mod=weibotime">7月5日 22:29</a> 来自 <a href="https://app.weibo.com/t/feed/14ybEh">nova5i 2400万AI四摄</a> </p><p id="cb70ec96-1615-4c1f-a259-3cee1b7171d7" class="">什么是最简单又有效的销售策略？这个问题很关键。复杂的策略是执行不了的。只有简单的且有效的销售策略才能执行。每个人想好自己的这个问题，才能把一个季度、一年做好。销售尤其是销售负责人，要把如何做这样基本的问题想清楚。</p><p id="76de9ed7-8a46-4c33-97d1-dc5bfde10da0" class="">我的答案是：复制成功，包括你自己的和别人的成功。</p><p id="55c58d48-705f-47c8-9a61-05f89a7f1608" class="">
+</p><p id="bc01a3c9-3217-422a-af04-dcd50f886251" class=""><a href="https://weibo.com/1819698443/Ja3V7ECHt?from=page_1005051819698443_profile&amp;wvr=6&amp;mod=weibotime">7月7日 09:26</a> 来自 <a href="https://app.weibo.com/t/feed/14ybEh">nova5i 2400万AI四摄</a> </p><p id="bd83809f-41ff-4bd0-bfd5-967fdf3d744b" class="">执行既不是计划，也不是责任心，而是决策行动力（SHL UCF 1.1 做出决定和采取行动）。这个词条是SHL历史上堪称伟大的心理学家Dave
+Bartram创造的，很贴切、准确的描述出执行的含义。 </p><p id="c06f7480-c82d-4bdd-8a85-81a48998f434" class="">
+</p><p id="f6f7020a-982b-4d2f-85a4-66683d50e23d" class=""><a href="https://weibo.com/1819698443/JajeBkKsu?from=page_1005051819698443_profile&amp;wvr=6&amp;mod=weibotime">7月9日 00:25</a> 来自 <a href="https://app.weibo.com/t/feed/14ybEh">nova5i 2400万AI四摄</a> </p><p id="0b9096eb-5c8d-4e4c-b132-8c77d4e248b2" class="">要把自己的客户拜访装满日程表，不要有一刻闲着。这就是销售冠军的第一军规。 </p><p id="7df1f975-11b2-4aca-9bc9-b660d2085a6f" class="">
+</p><p id="e18dbe58-3aa0-4788-be08-7555ae8a4098" class=""><a href="https://weibo.com/1819698443/JaJOZngmD?from=page_1005051819698443_profile&amp;wvr=6&amp;mod=weibotime">7月11日 20:06</a> 来自 <a href="https://app.weibo.com/t/feed/14ybEh">nova5i 2400万AI四摄</a> </p><p id="13f5d4d1-4645-4717-8d3e-961562f23e4e" class="">B2B销售的成功，首先是建立客户对你产品的信任，其次建立对你组织具体人和团队专业能力的信任，这两个信任缺一不可。 这是很多小公司做不起来的根本原因。老板的心思不在组织的能力（不是组织能力）上，而是根据自己的喜好，打造的是个人能力和个人品牌。</p><p id="ba9c2139-30ac-4911-a4ba-0c366f3e3571" class="">1. 产品信任，2. 专业信任。离开这两个，任何客户拜访都是没有意义的。每家公司的标准销售流程都是围绕这两点来设计的。B2B的销售自己，就是一个桥梁，连接起客户和公司。没有顾问介入，销售的大部分拜访基本就是无效。</p><p id="696c2707-e010-47f3-ab06-57115c111383" class="">
+</p><p id="994352f9-d983-4ace-9530-db39dbc78dfe" class=""><a href="https://weibo.com/1819698443/Jbbf74hEA?from=page_1005051819698443_profile&amp;wvr=6&amp;mod=weibotime">7月14日 17:55</a> 来自 <a href="https://app.weibo.com/t/feed/14ybEh">nova5i 2400万AI四摄</a> </p><p id="e1c8bf3c-0f0e-4786-bdcc-7b7777f553e0" class="">工作和事业，不只是一个工作那么简单，是人和世界、人和人发生连接的方式。</p><p id="e4fd8815-b901-4089-9a4f-62cb131d7681" class="">做成事，叫做成就激励；和人结成亲密关系，叫做人际互动激励；</p><p id="d503de90-3bea-4b8a-a24c-8b10e588ca07" class="">发展组织，在组织中获得权力，操控感，叫做权力激励。</p><p id="70ffe9a6-b273-4ce6-bc0a-dcf2edd5655a" class="">这三项激励动机由社会心理学家麦克里兰发现，分别叫做：成就动机、亲和动机、权力动机。强烈的动机刺激使得人产生能量，保持激昂的斗志。</p><p id="c221a496-d2b0-44d3-9918-085edd7524d6" class="">
+</p><p id="6ecaea49-7a8d-4c81-9791-d75656377dd4" class=""><a href="https://weibo.com/1819698443/Jbih85vo5?from=page_1005051819698443_profile&amp;wvr=6&amp;mod=weibotime">7月15日 11:49</a> 来自 <a href="https://app.weibo.com/t/feed/14ybEh">nova5i 2400万AI四摄</a> </p><p id="a7a81158-15a4-4866-ada2-a3fbfc0679fe" class="">销售自己要学会灵活处理复杂事情，比如客户时间冲突，法务条款争议，一再新增需求，天天要求降价，等等。最关键的是，学会找到原因和决策依据，做出分析判断，形成思路。销售就是为了解决问题而存在的，不要指望别人，不要指望老板，把事情快速处理掉。销售三大死穴：没有思路，议而不决，决而不动。 </p><p id="63aafe42-a1a9-4dce-ae47-12ac5366af44" class="">
+</p><p id="82baf927-f0ae-4e52-b38d-de4e4b3dd0f0" class=""><a href="https://weibo.com/1819698443/JbpPk4Gm5?from=page_1005051819698443_profile&amp;wvr=6&amp;mod=weibotime">7月16日 07:02</a> 来自 <a href="https://app.weibo.com/t/feed/14ybEh">nova5i 2400万AI四摄</a> </p><p id="b57f1b6b-4201-49bc-a444-bbe0eed73baf" class="">请咨询公司盘点有什么好处？原则上人才盘点是可以自己盘的，但请咨询公司有咨询公司的好处。第一，校准拉通（Talent Calibration）。咨询公司可以从整个组织层面帮助你进行校准和拉通，高潜人才哪个事业部优秀，哪个部门人才厚度不够，这个事情公司自己几乎做不出来的。每个部门分管的领导都觉得自己的人才优秀，在组织内部，这不是技术问题，是政治问题，很多公司只能靠强制分布来处理。第二就是专业。咨询公司有成型的方法论，有很多企业实施的经验，避免你很多不该犯的错误，形成组织人才盘点的标准流程和规范以后，固化下来，每年不断优化，成为组织能力的一部分。第三，可以进行行业对标。优秀的咨询公司，有各行业头部公司的标杆数据，让你知道组织的人才现状，和同行比你的特点，在关键岗位的人才储备情况，等等。第四，管理决策和行动的专业经验。每一个大的人才盘点，最后管理者要做出大量的管理决策和行动，才能对组织施加影响。盘点承担的主顾问，要有和CEO对话的能力，讨论下一步的管理行动。咨询公司顾问在这个时候扮演外部首席人力官的角色，对于专业能力、业务洞察、带领团队发展组织的经验，都非常重要。毫无疑问，这是组织人才盘点的最后画龙点睛之笔，只有少数的公司、少数的顾问能做到。</p><p id="98a2a052-3e94-45da-aca8-1e74b0b28a91" class="">
+</p><p id="0373d48d-049b-4dd9-917c-02c56a1b49af" class=""><a href="https://weibo.com/1819698443/JbzAJwBvP?from=page_1005051819698443_profile&amp;wvr=6&amp;mod=weibotime">7月17日 07:54</a> 来自 <a href="https://app.weibo.com/t/feed/14ybEh">nova5i 2400万AI四摄</a> </p><p id="e6f5ef17-79a8-45c9-be4e-3be98c6865cd" class="">管理者是通过管理决策和行动，对组织产生影响，而不是别的。干人，调组织，调职责，调地盘，都需要管理者极大的勇气和决心。你不敢做这些事，就不配做管理者。很多人读多了书，看多太多任正非讲话和毛选，以为管理是靠讲话和写文章在管理公司和组织。 </p><p id="27705924-adff-40ff-b533-071015fdcd2b" class="">
+</p><p id="e15dc997-4435-4070-ace4-8e099ad15060" class=""><a href="https://weibo.com/1819698443/JbzS4f1pT?from=page_1005051819698443_profile&amp;wvr=6&amp;mod=weibotime">7月17日 08:37</a> 来自 <a href="https://app.weibo.com/t/feed/14ybEh">nova5i 2400万AI四摄</a> </p><p id="86a32f18-012d-48f2-adcc-a6698b999ec2" class="">管理者要制定规则，按照规则来行事。管理有科学的部分，那就是规则。组织和队伍强大，规则在起作用，大家按照什么规则行事，按不按规则行事，这是最重要的因素。这点只有带队伍的人才清楚，同时HR要知道。管理也有艺术的部分，很多人以为是潜规则，其实不是，是度的把握。比如说一个人是凶一点还是缓一点，追一个事情是立即执行还是有时间缓冲，跟下属谈话频次是高还是低，这是艺术的部分，需要管理者自己去实践，调整掌握，把好分寸。</p><p id="898055f7-2258-47f9-a14d-8aa210b3828c" class="">
+</p><p id="3f3ac285-f7f1-4287-97af-b1fd8d2ed69c" class=""><a href="https://weibo.com/1819698443/JbBUapYB2?from=page_1005051819698443_profile&amp;wvr=6&amp;mod=weibotime">7月17日 13:47</a> 来自 <a href="https://app.weibo.com/t/feed/14ybEh">nova5i 2400万AI四摄</a> </p><p id="618fbaac-877f-4f63-b30b-007c82bd0280" class="">只有优秀的下属才能解除老板的焦虑。发展提升的最好办法，就是把不称职的人从重要岗位上撤下来，换上优秀的人。这样组织好了，老板好了，被撤的人好了，上去的人更好了。为什么这么多赢的办法，往往没人想到去做？ </p><p id="5313e72d-e35b-48fb-8306-6d1a58b583a0" class="">
+</p><p id="0ce407cf-bbd2-4498-8533-0a14ab4c2760" class=""><a href="https://weibo.com/1819698443/JbFsh7ATg?from=page_1005051819698443_profile&amp;wvr=6&amp;mod=weibotime">7月17日 22:50</a> 来自 <a href="https://app.weibo.com/t/feed/14ybEh">nova5i 2400万AI四摄</a> </p><p id="1be08168-d68a-4ece-97c4-a17050355cdd" class="">每次带着下属打单，输了以后都特别痛。不知道为什么。比自己输痛多了。自己打，每一个细节都会考虑周到，几乎不输。带下属打，到处都是错误，到处输到崩溃。但为了团队成长，输确实是代价。每个销售要知道，你输过的单，都是公司在你身上投过的资。如果没有长进，那所有的投资都是折旧，最后你被折成废物；如果你最后成为销冠，那么所有这些输过的单，就是资产，是你终身宝贵的财富。</p><p id="d16f9f0a-6ddc-4d4d-9f6b-b94c10491ffb" class="">
+</p><p id="a12f7c31-df3a-4beb-8997-f74403fabae5" class=""><a href="https://weibo.com/1819698443/JbNvfAtou?from=page_1005051819698443_profile&amp;wvr=6&amp;mod=weibotime">7月18日 19:19</a> 来自 <a href="https://app.weibo.com/t/feed/14ybEh">nova5i 2400万AI四摄</a> </p><p id="7363aa34-62f7-4861-9855-65534954d752" class="">销售需要点死磕精神，狠劲，不搞下来绝不罢休的决心。有的销售就缺这个。干啥啥不成。销售的能力，看他的另一半就知道。如果这个女生一般，老公是男神，肯定销售能力了得。如果女销售自己挺好看，老公长相很普通，也不挣钱，销售能力肯定很弱，估计也没什么潜质。男销售也同理。 </p><p id="870a13a6-2520-465f-905f-f4c5d9fcf250" class="">
+</p><p id="18edf726-0aa0-4112-973c-6f6f19da4c92" class=""><a href="https://weibo.com/1819698443/Jcba5uDlB?from=page_1005051819698443_profile&amp;wvr=6&amp;mod=weibotime">7月21日 07:33</a> 来自 <a href="https://app.weibo.com/t/feed/14ybEh">nova5i 2400万AI四摄</a> </p><p id="7fb17a82-c8f0-4374-a1da-5c00864afbec" class="">B2B销售的成交，需要客户对供应商有三个信任：</p><p id="68a453b1-1859-431d-b1a5-26d58d84926b" class="">1.产品信任（靠产品演示和口碑）；</p><p id="76859684-53b4-4b90-9a1e-dfce28ef7b70" class="">2.专业信任（靠专业顾问）；</p><p id="f4a09fc3-cd1a-4d11-875f-16ded3eef113" class="">3.销售信任（靠销售自己）。</p><p id="3c21b32d-38f7-4c1f-9fdd-15eb08cf0604" class="">完成这三个信任才能实现成交。光你销售跑和产品展示为什么不行？没有让客户感觉你这公司专业。光产品演示和专业讲解为什么不行？买谁的东西很重要，销售的人品决定结果。光专业和销售能力，为什么客户还是难采购？客户本质上买的还是产品，不敢亮产品，证明你没底气。销售过程就是这三个东西的完整展示，三个信任的形成。如果客户成交不了，请你把这三个要素扫描下，一定是其中出了问题。</p><p id="bfef51e6-6185-4ceb-9d0b-eca7a48a7be9" class="">
+</p><p id="ad660882-2523-4a61-b32b-9fd181b37ce2" class=""><a href="https://weibo.com/1819698443/JckFSBXEF?from=page_1005051819698443_profile&amp;wvr=6&amp;mod=weibotime">今天 07:46</a> 来自 <a href="https://app.weibo.com/t/feed/14ybEh">nova5i 2400万AI四摄</a> </p><p id="1575d248-7fb2-4c40-90af-f7edacb202b6" class="">销售就象一个管理者，学会调配好人和事，把自己的时间和精力释放出来。学会分清事情的轻重缓急，对每个时间点要做的重要事情，做出来清晰的判断： </p><p id="fe15d512-5cb2-491c-b575-93f82715c586" class="">1.重要的单子，要缠住客户不放，追单时要把狼性和狠劲体现出来，不是你死，就是我活。</p><p id="c563e0a7-7ee4-4810-ae96-ab3985e867eb" class="">2.销售的主要工作就是专心做客户拜访和交流，拿下重要客户，这是压倒一切的任务。每个销售都要树立输了单，责任就是销售自己的概念。不要怨别人，不要抱怨公司和老板。</p><p id="a1f61c14-d9e1-4f31-9f75-675681d137d8" class="">3.在做出分析判断后，给客户提供的方案和安排等，要说明原因和合理性，要斩钉截铁的，不能说这也可以，那也可以，否则客户自己就乱了。也不要没有根据的胡乱下结论，没有任何逻辑性，客户就会认为你是个傻逼。</p><p id="c1bb0a8a-4e1c-4a61-90d4-b9dad8d8bac3" class="">
+</p></div></article></body></html>

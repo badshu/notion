@@ -1,0 +1,636 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>不良资产的高大上时代</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="88f75cfe-68ce-48ef-a33a-2bf988c28819" class="page sans"><header><h1 class="page-title">不良资产的高大上时代</h1><table class="properties"><tbody><tr class="property-row property-row-select"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesSelect"><path d="M7,13 C10.31348,13 13,10.31371 13,7 C13,3.68629 10.31348,1 7,1 C3.68652,1 1,3.68629 1,7 C1,10.31371 3.68652,13 7,13 Z M3.75098,5.32278 C3.64893,5.19142 3.74268,5 3.90869,5 L10.09131,5 C10.25732,5 10.35107,5.19142 10.24902,5.32278 L7.15771,9.29703 C7.07764,9.39998 6.92236,9.39998 6.84229,9.29703 L3.75098,5.32278 Z"></path></svg></span>作者</th><td><span class="selected-value select-value-color-red">张化桥</span></td></tr><tr class="property-row property-row-last_edited_time"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedAt"><path d="M6.98643729,14.0000972 C5.19579566,14.0000972 3.40419152,13.3106896 2.04245843,11.9323606 C-0.681017475,9.21200555 -0.680780251,4.76029539 2.04293482,2.04012507 C4.76664406,-0.68004331 9.22427509,-0.68004331 11.9480135,2.04013479 C13.272481,3.36277455 14,5.1330091 14,6.99552762 C14,8.87640182 13.2721894,10.6285043 11.9480135,11.9509302 C10.5679344,13.3105924 8.77756503,14.0000972 6.98643729,14.0000972 Z M10.2705296,7.00913883 L10.2705296,8.46099754 L10.2705296,8.65543362 L10.076181,8.65543362 L8.6543739,8.65543362 L5.72059514,8.65543362 L5.52619796,8.65543362 L5.52619796,8.46099754 L5.52619796,5.52541044 L5.52619796,3.37946773 L5.52619796,3.18502193 L5.72059514,3.18502193 L7.17253164,3.18502193 L7.36692883,3.18502193 L7.36692883,3.37946773 L7.36692883,6.81467358 L10.076181,6.81467358 L10.2705296,6.81467358 L10.2705296,7.00913883 Z M12.1601539,6.99552762 C12.1601539,5.61697497 11.6190112,4.32597154 10.6393933,3.34769528 C8.63253764,1.34336744 5.35197452,1.34061603 3.34153136,3.33944106 C3.33868273,3.34219247 3.33607716,3.34494388 3.33322852,3.34769528 C1.32397148,5.35459953 1.32372842,8.63641682 3.33322852,10.6433794 C5.34295224,12.6504489 8.62968901,12.6504489 10.6393933,10.6433794 C11.6190112,9.66506426 12.1601539,8.37408027 12.1601539,6.99552762 Z"></path></svg></span>最后编辑</th><td><time>@Jun 28, 2020 10:32 AM</time></td></tr></tbody></table></header><div class="page-body"><p id="b625c6ee-c0aa-4b2c-b1b5-2cdf8c49c13f" class="">
+</p><p id="e47f9dcd-3ea2-4380-9a3f-0d32d3ee1265" class="">张化桥, 2020-6-26.</p><p id="1ecb0e77-3d89-4730-9498-5a48af1bfb9e" class="">复旦大学金融系列讲座。</p><p id="d0a5872c-f7e7-45cb-850a-022204cc29cc" class="">各位晚上好，谢谢王永钦老师安排的这个活动。今天我们的主题是消费金融、小微企业贷款以及由此产生的不良资产。</p><p id="b7bde73d-3003-4577-91fd-b97c67c90fba" class="">结论：</p><p id="3ea13b25-1911-49f0-a0ba-1df80db1df34" class="">(1) 总的来讲，消费金融让人一直穷下去，小微企业贷款加大企业倒闭的概率。</p><p id="9e2f98fa-3185-429f-9453-841d73e90222" class="">（2）在多数情况下，信贷机构与借款人之间的关系是互相伤害。</p><p id="c198aed7-8a93-42ec-be54-0fdc8c45e3d3" class="">（3）中国的金融深化已经过头了。</p><p id="51914293-3c18-41a1-b02a-ae7d686e2333" class="">（4）中国目前的坏帐非常严重。</p><p id="5d648ed5-ebea-4cfa-9bfc-b7fbc49e57eb" class="">（5）中国的银行应该整合、瘦身、关停并转。</p><p id="2a857232-f915-4d97-b747-9f0f5ec41452" class="">（6）多数非银金融机构应该停止坏帐的生产，转型为不良贷款处置企业。</p><p id="9c2f7480-c542-45ce-abdf-6b71f0d594de" class="">（7）中国目前的文化、政治、法律不利于不良资产的处置。下水道堵塞严重。</p><p id="9d736390-410f-4de4-a0d6-7047b286622b" class="">消费信贷/小微企业信贷是一个很危险的东西，很象烟草、酒精、博彩一样。这种产品的消费不是越多越好，必须十分谨慎。根本的原因是：小企业的死亡率很高，再加上高昂的金融媒介费用，因此行业的利息率必须很高、必然很高。而反过来，小型企业在长期支付高利息的情况下，又不可能繁荣，甚至无法生存。而利率太低，信贷机构又会亏钱，终究会退出市场。</p><p id="5c0fb1f9-ada9-486c-8b5a-1b9e55a81f6b" class="">所以，在某一个额度之上，小企业信贷往往只是债权人和债务人的互相伤害。而这个额度是需要非常大的技巧和意志力才能控制的东西。人往往贪心、信心爆棚。所以，只有少数伟人才能控制好这个额度。经济稍有波动，你就翻船了。所以，最佳的信贷额度也许是零。</p><p id="d1d8e583-e087-4f2e-b3c0-9e4c235738a8" class="">对于绝大多数小型企业来说，即使零利率、软贷款也很危险。</p><p id="afabaef0-e2c2-40b5-bb9c-ec4cd29ab516" class="">举几个例子，（1）美国的学生贷款利率大都在3-5%。不高啊！但是，累积下来的债务已经成了一个巨大的社会问题、政治问题。</p><p id="f6b59865-550e-4588-950d-ac036338c683" class="">(2) 二战后的几十年，西方国家政府和联合国的各种下属机构都对第三世界穷国发放过一种“软贷款”：利率低、限制少、期限长、甚至可延期。</p><p id="4c316fff-5b6b-4031-945e-ee23a3df1573" class="">但是，结果基本上是打水漂。很多国家因此长期负债累累，爬不起来。原因：</p><p id="254e9390-22ac-46af-80e2-d5d1e11922ca" class="">（1）各种费用（美其名曰技术援助）吃掉一大块，</p><p id="90466a03-ab91-4667-859b-7cfa004877e6" class="">（2）腐败政府和官员贪污一大块，</p><p id="15f30ede-a191-4346-abf4-c9c6a4018155" class="">（3）更重要的：即使零利息，你也得还本啊。很多项目根本没有这个能力。中小企业的死亡率是很高的。即使是负利率，也还不起。</p><p id="26fd3708-ab52-4512-bbfe-a123632c9156" class="">中国也曾长期享受这种援助。但是結果都不理想。</p><p id="4db11303-c425-4499-96e4-d0f28b772c3f" class="">在欧美，在任何国家，小型企业要想获得银行贷款，都是既难且贵。小型企业的融资问题，大家天天讲，月月讲，年年讲。每个政府都有小型企业管理局，或者类似的单位，可见这件事是个顽疾。</p><p id="c9145ea2-82b8-44d7-8ca5-5fa3214d89af" class="">小型企业的融资往往与消费金融绑在一起。消费金融大约从60年代开始快速发展。而差不多同时，普惠金融在孟加拉国、印度和非洲、拉丁美洲也成了一个很时髦的现象，特别是尤努斯的大力宣传。</p><p id="1b05925c-3019-4a74-9516-f95e2f29bcb2" class="">在欧美，除了住房按揭的利率似乎比较低以外，信用卡、汽车贷和其它类型的消费信贷，在支付了10-20%甚至更高的利率之后究竟給消费者带来了多少福利？消费者当然有权享受消费信贷，就象银行有权发放消费信贷一样，但是，这个产品的历史作用，值得反思。一个在发展中国家从事普惠金融二十多年的英国人叫Hugh Sinclair 写了一本书叫 Confessions Of A Microfinance
+Heretic。书中他问了一个有趣的问题，“你听说过有人靠信用卡债务而脱贫，甚至变得富有的吗”？难道消费信贷不是固化贫困，或者至少拖慢你走向财务自由的一个因素吗！</p><p id="5859de2e-0f19-4aed-b727-a55d89cfd08f" class="">普惠是很多次贷机构的美好愿望，也是一部分从业人员和机构的忽悠。大家做生意总希望有个愿景和口号。无可厚非。但是，我们还是要看实质。你真心认为，借款人在付给你15%，25%、35%的年化利率之后，还能持续地赚钱吗？换个角度，你真心地认为，你把利率降到15%或者25%以下，而违约率和营运费用又这么高，你的贷款公司还能持续发展吗？注意持续二字。</p><p id="59247d6a-1181-4079-9492-ef45cf310509" class="">“次贷机构”不好听，可这又确实是我们的真实姓名。难怪在本次新冠肺炎来袭之前，全球次贷机构就大片大片地死亡了。它们的死因就是与借款人的相互伤害。</p><p id="0cedd568-e497-4e84-8357-24e3ffd9c6f6" class="">（1）你看中国上万个小额贷款公司、典当公司、租赁公司、保理公司、融担公司、P2P公司、助贷公司、甚至消金公司的死亡、伤残无数。</p><p id="4431e042-5a25-4167-a7a1-b2753d6499ff" class="">（2）美欧国家消费金融的行业翘楚，绝大多数已经伤残，甚至，包括著名的LendingClub, On Deck, Wonga, Greensky, Funding Circle, Amigo
+Loans。现在看着还行的几家，比如澳洲的AfterPay 也会遇到巨大的挑战。</p><p id="5b93904c-264e-45df-b325-d50b3768baf7" class="">（3）发展中国家的普惠金融企业几乎全部慘不忍睹。亚、非、拉几乎无一例外。</p><p id="e93493fc-15f6-478c-84eb-bbbe8fcbeba3" class="">不要再说，中国两亿人、三亿人尚未被金融覆盖。大家不要再说三千多万中小企业无法获得便宜的融资。这些企业、这些人如果真的尚未覆盖的话，你也不应该试图覆盖，因为他们都用不起你的钱；而且你也不愿意覆盖、不应该覆盖、你也覆盖不起。</p><p id="4a5cd6c0-3420-4e92-8659-ac91adb3a635" class="">中国的金融深化已经走过头了。八十年代，我还在央行工作时，上上下下言必称麦金农的金融深化理论。可是我们干得太好了，一直把金融深化推到了另一个极端。包商银行的调研显示，连内蒙古的每个乡镇都有了起码一个正式的金融机构，一般来说都有三、五个。这还不算支付宝、微信账户、余额宝之类。</p><p id="fc0bd89d-0105-40dd-89f4-f059974ac0fa" class="">过去十年，金融科技公司号称要通过技术来减少违约和欺诈，可是除了极少数成功的例子，大家都失败了。我的结论是，次贷就是次贷。在次贷人群中选优，概率上就有问题。不少业内人士辩解说，我们做的是几乎优质的借款人near-prime，可是这个界限太难划，而且，如果对方愿意接受这么高的利息率，还不是次贷吗？</p><p id="65b3ac68-7614-4d4d-b4f3-43fd26e83624" class="">即使金融科技企业幸运地找到了消费者的痛点，这个痛点也是可以移动、消逝的。而且，当金融科技公司正在挥汗涔涔攻克这个痛点时，实力雄厚而且已经有大批基础客户的银行通过小小的改良或者收购就可以解决这个痛点，或者部分地解决。那咱们金融科技公司又白干了。这十年，我在香港和英国就感受到了由于挑战者的出现，银行如何改善灵活性和服务水平，挤掉了金融科技公司的生存空间。</p><p id="6660f479-28f7-4605-8732-4ac11f8388d3" class="">我认为，绝大多数金融科技公司和非银金融机构、新金融机构跟银行相比，都输在了起跑线上。</p><p id="25417c14-d2d3-49b3-9666-03131ba8bf66" class="">（1）资金实力。即使你的估值很高，但是你的钱少。</p><p id="8159adbb-5476-4ccc-9c83-60bc56b92350" class="">（2）已有的基础客户，</p><p id="377a7dd0-34b3-415d-b0c1-1102dc21cd66" class="">（3）银行在各种业务之间的互相补贴，</p><p id="b8f0e235-7460-43dd-9c82-c93106da41d0" class="">（4）银行的政治影响和客户信任（不会倒闭），</p><p id="27b0361d-f61c-4b5b-a885-c550e767360c" class="">（5）资金成本（存款利率低），</p><p id="837e4617-8431-402f-97f7-619b7fc621c1" class="">（6）客户的质量。</p><p id="aea861a3-4651-418f-b88f-8a505fea9215" class="">下面我们来看中国的坏帐问题究竟有多么严重。</p><p id="63fc0d75-da97-416d-826c-957865d46111" class="">（1）企业之间的三角债已经十分严重，骗子横行，</p><p id="14ac957d-0e95-4c9f-80ff-fa9801b99c13" class="">（2）企业贷款的违约十分严重，老赖横行，</p><p id="4293d7c4-7df6-44a4-84d8-eada81f68b0e" class="">（3）消费信贷的违约率已达历史最高水平，不管是p2p, 消金、小贷，还是銀行信用卡、抵押和纯信用贷款，</p><p id="d7b0dc05-12a4-4ed8-818b-3e099ed0af0d" class="">（4）企业信贷的纠纷即使在立案后，判决也很慢；在判决后执行也很难。我知道有些案子拖几年没结果。</p><p id="f47390b3-39ec-497f-8f45-1255a5aa6d7e" class="">（5）法院不肯受理消费信贷的案子，仲裁和判决后，也很难执行。而且诉讼也是一条昂贵的路。司法现状正在危及社会。有人关心吗？</p><p id="b7b6c5c6-1524-417b-a211-e0a72db95f62" class="">（6）私募基金的状况比p2p更加严重，因为它的块头更大。</p><p id="b90b521a-01dd-49a3-8af7-3a43ef27d527" class="">我认为，三年后，中国绝大多数非银金融机构都会关门或者瘫痪。</p><p id="9584a816-56f2-4c86-be01-bbf9a6dd3479" class="">我感觉，民间借贷和非持牌金融机构（含p2p）的催收受到了极大的打击，鼓励了违约，因此违约率可能超过一半。少数勇敢的投资者购买了一些此类不良资产包，但是不敢大举进入。</p><p id="0ade973d-dac2-468b-af3b-a9678649a8fc" class="">银行及其他持牌机构的消费信贷不良，现在基本上也只能靠催收和祷告。多数机构有自己的催收团队，也外包。你可能不敢相信，大银行的催收外包服务商动辄几百家。总行和各分行业各有势力范围，都不想让出地盘，而催收行业又无法整合。难道银行的行长们愿意跟几百个催收外包商打交道吗？</p><p id="a4f1068f-ccf6-4211-840c-d5eefdc84841" class="">在欧美，一个国家的催收外包业务一般都集中在3-5家公司。银行有合规的担忧，也希望只跟入围的三、五家外包商合作，以保护自己的名誉。在这个行业，大家靠的是信任，而不象我们靠的是牌照和关系。美国的银行通常把消费信贷的逾期打包卖给PRA和Encore Capital 等，并且贷款给这种机构，让他们购买不良资产。</p><p id="e557a41f-cb81-48a1-bcfe-478b8be4a299" class="">中国的催收机构对社会有巨大贡献：它们帮助放贷机构收回应该收回的资金，维持社会秩序，但是大家不敢做大，也不愿做大。中国有没有坏的催收机构、坏的催收人员呢？当然有。政府应该有理有节地处理。可是，我们会不会因为银行违规就关闭银行，并启动陆海空三军，逮捕全行员工？会不会因为某人喝酒醉死，而关闭茅台集团，或者因为出了车祸，而关闭上汽集团？</p><p id="7a89e690-232c-407e-bcce-f2c304067f58" class="">现在零零星星上千个催收公司的状况，既不利于加大科技投入、提升效率，也不利于合规管理。在湖南永雄，我们的业务主要是帮助银行和消费金融公司重组、收回已经核销的长帐龄的信用卡欠款。这也帮助欠款人解决历史遗留问题，重建信用。</p><p id="081984ec-e9a3-4d46-b755-e1fcedb3f236" class="">我有个谬论，</p><p id="faeaa28c-1cc2-4810-8614-40e50e25edd3" class="">（1）中国信贷早已严重过剩，继续搞信贷膨胀只能恶化贫富差距，并不能创造财富。</p><p id="b2cec2dd-c85a-4c57-9c4a-c010eca75428" class="">（2）多数银行和非银行金融机构没有存在的价值，需要关停并转、提高效率、改善资产质量。</p><p id="bcaa860c-7da3-4a6c-baf6-0815c7027bf0" class="">（3）聪明的中小金融机构应该认清潮流，停止放款，停止不良资产的再生产，转型为不良资产处置机构，而且从自己的不良资产做起，然后为其它机构服务。我们需要一个文化大革命，改变放款光荣，贷后管理没有地位的想法。</p><p id="2a86000d-6d6c-4ce7-aa8f-912c1090d600" class="">有人问，如果我们大幅度地减少中小企业信贷和消费信贷会不会导致经济衰退？也许会，也许不会，但中小企业和消费者通过减少对信贷的依赖，减少与金融机构的相互伤害，提高运营效率，好处多于坏处。</p><p id="c969f935-95c9-4cf4-9242-63ae2ff55d93" class="">这次新冠危机，很多人被迫呆在家中，弹尽粮绝，焦虑不堪。这当然首先是贫穷的罪过。但它也显示了一个道理：积蓄很重要。我苦大仇深，让我说句也许残酷无情的话：越穷的人越需要储蓄，因为他们更容易遇到不测风云，而消费信贷也更容易把他们陷在危险之中。</p><p id="7897e244-621e-4c19-a674-bca1f1728ce7" class="">同样，小型企业本来就很难生存，而信贷只是加大了它们死亡的概率。虽然它们有可能因为信贷而如虎添翼，但是只有极少数小型企业是老虎，而绝大多数小型企业只是狗和猫而已。减少信贷，就是减少相互的伤害。</p><p id="2cbac93c-62d2-414a-a0af-b71b4d284130" class="">从理论上讲，个人破产法的实施会大大提高社会的诚信度、打击老赖，但是如果政府和司法系统不配合，有了立法也没用。况且，从房地产税的立法之艰难，我理解了，中国的事情必须放在五千年文明的角度来看，急也没用。</p><p id="b4b606dd-8b81-4d01-9583-91fdac11cc55" class="">三本质疑小额贷款的书：</p><p id="39e107ef-4d68-4bfe-8b8f-383b8e16e857" class="">(1) David Roodman: Due Diligence: An Impertinent Inquiry into Microfinance. 2012.</p><p id="0d979fee-539b-4eb0-8483-04ca1bb2d6c4" class="">(2) Hugh Sinclair: Confessions of a Microfinance Heretic: How Microlending Lost Its Way and Betrayed the Poor. 2012.</p><p id="f4c9d1a2-4753-409c-977d-c62c70e26b51" class="">(3) Milford Bateman: Why Doesn&#x27;t Microfinance Work?: The Destructive Rise of Local Neoliberalism. 2012.</p><p id="d1d75817-6c40-4174-96aa-a3c082cdcb88" class="">
+</p><p id="a27e9b1e-0bf7-4b9b-8d49-08180eaa919a" class="">大家都说，“毁掉一个年轻人的办法，就是跟他谈财务自由”。窃以为，毁掉他，还有一个办法：跟他鼓吹消费信贷。</p><p id="a231a0e2-c093-4217-80d4-d44d3f4909ec" class="">每个人都在说，金融机构的同质化严重，应该寻求差异化竞争。可是谈何容易？</p><p id="edf224ce-d536-4e03-8d7c-bca1a5a19a22" class="">
+</p><p id="865e78d8-d7f0-4724-8e9f-07579553c9f8" class="">对我在复旦大学的讲座，大家反响强烈。我回复了几十个电邮、电话、微信。我确实十分惊讶。</p><p id="4363d741-eb6a-4201-95e2-007d513887b3" class="">做乡镇金融和社区服务的王聚冰，宜农科技的创始人（他是我心中的英雄）发来这样的微信：</p><p id="82e8d526-b5fa-419d-a839-51567c6b92d9" class="">“过度金融害死人。金融机构成为全社会的吸血鬼，这个现象值得深思。必须倒掉一批，进去一批。手机、车、电脑没有分期的必要。学生不应该贷款。手机能买得起就买，买不起就用旧的，没啥必要贷款啊？中小企业，就是要在严酷的环境里奔跑，适者生存。真正有前途的，vc盯着呢!
+我们宜农科技多年来坚持只做储蓄服务，帮助村民存款，但是坚决不放款。村里都是二流子在放高利贷。有些农商银行、村镇银行都烂掉了。坏人当道。”</p><p id="c4057498-936c-4d3e-98e1-b16d3ddb9046" class="">张化桥：“你做了一个正义的选择。帮穷人提供储蓄服务是最重要的。亚非拉各国在经历了二十多年普惠金融的浩劫之后，都发现了这个真理。英国人Hugh
+Sinclair 2012年的书讲得太透彻了。储蓄是致富的必要条件，虽然不是充分条件。”</p><p id="d2361d36-fe89-4db2-b3ef-7c73978518f7" class="">张化桥：“我们的文化还是流氓无产者的文化。我们的法制还是残缺的、脆弱的。可是，在这样的基础上，我们一不小心，建起了一座金融大厦。难道你不害怕吗？”</p><p id="96a6dc9d-a8de-4b9b-9792-fda0799423fa" class="">
+</p><p id="4bd00c4c-861b-4f29-ad5e-d4f3803e0dad" class="">“我们应该回过头来，扎扎实实做好产业基础，让老百姓口袋里有真钱！四大资产公司这些年赚的是什么钱？无非就是土地升值的钱罢了。</p><p id="50dd349f-2681-43a4-aece-f7b49daf806f" class="">“我们放的那些款，最后的结果就是你说的互相伤害！另外，你看好不良资产处置，但是在中国做不良资产处置，同样没有文化基础，特别是没有法律基础！”</p><p id="b6eed04f-6ceb-4439-b91c-7564f76730d2" class="">
+</p></div></article></body></html>

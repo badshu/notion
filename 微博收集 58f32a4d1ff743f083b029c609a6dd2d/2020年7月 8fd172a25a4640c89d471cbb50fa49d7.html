@@ -1,0 +1,652 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>2020年7月</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="8fd172a2-5a46-40c8-9d47-1cbb50fa49d7" class="page sans"><header><h1 class="page-title">2020年7月</h1><table class="properties"><tbody><tr class="property-row property-row-select"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesSelect"><path d="M7,13 C10.31348,13 13,10.31371 13,7 C13,3.68629 10.31348,1 7,1 C3.68652,1 1,3.68629 1,7 C1,10.31371 3.68652,13 7,13 Z M3.75098,5.32278 C3.64893,5.19142 3.74268,5 3.90869,5 L10.09131,5 C10.25732,5 10.35107,5.19142 10.24902,5.32278 L7.15771,9.29703 C7.07764,9.39998 6.92236,9.39998 6.84229,9.29703 L3.75098,5.32278 Z"></path></svg></span>作者</th><td><span class="selected-value select-value-color-green">易伟</span></td></tr><tr class="property-row property-row-last_edited_time"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedAt"><path d="M6.98643729,14.0000972 C5.19579566,14.0000972 3.40419152,13.3106896 2.04245843,11.9323606 C-0.681017475,9.21200555 -0.680780251,4.76029539 2.04293482,2.04012507 C4.76664406,-0.68004331 9.22427509,-0.68004331 11.9480135,2.04013479 C13.272481,3.36277455 14,5.1330091 14,6.99552762 C14,8.87640182 13.2721894,10.6285043 11.9480135,11.9509302 C10.5679344,13.3105924 8.77756503,14.0000972 6.98643729,14.0000972 Z M10.2705296,7.00913883 L10.2705296,8.46099754 L10.2705296,8.65543362 L10.076181,8.65543362 L8.6543739,8.65543362 L5.72059514,8.65543362 L5.52619796,8.65543362 L5.52619796,8.46099754 L5.52619796,5.52541044 L5.52619796,3.37946773 L5.52619796,3.18502193 L5.72059514,3.18502193 L7.17253164,3.18502193 L7.36692883,3.18502193 L7.36692883,3.37946773 L7.36692883,6.81467358 L10.076181,6.81467358 L10.2705296,6.81467358 L10.2705296,7.00913883 Z M12.1601539,6.99552762 C12.1601539,5.61697497 11.6190112,4.32597154 10.6393933,3.34769528 C8.63253764,1.34336744 5.35197452,1.34061603 3.34153136,3.33944106 C3.33868273,3.34219247 3.33607716,3.34494388 3.33322852,3.34769528 C1.32397148,5.35459953 1.32372842,8.63641682 3.33322852,10.6433794 C5.34295224,12.6504489 8.62968901,12.6504489 10.6393933,10.6433794 C11.6190112,9.66506426 12.1601539,8.37408027 12.1601539,6.99552762 Z"></path></svg></span>最后编辑</th><td><time>@Jul 27, 2020 10:19 AM</time></td></tr></tbody></table></header><div class="page-body"><p id="982a0788-1cab-4ec8-9bfc-75a21cfd36e6" class=""><a href="https://weibo.com/1862695480/JbDdPFfMK?from=page_1005051862695480_profile&amp;wvr=6&amp;mod=weibotime">7月17日 17:09</a> 来自 <a href="http://vip.weibo.com/prividesc?priv=1006&amp;from=feed">iPhone 6s</a> 已编辑</p><p id="6735a57b-b133-4b36-a9aa-9840f87b9dcb" class="">老江湖这一次的成功逻辑依旧很简单，我们都围观了的：</p><p id="e0b4ebe4-7298-424f-867c-9750b3c6589d" class="">1，创业板的补涨效应（6月初我们看2500，那记得那张树洞图？）；</p><p id="00587252-c0d8-440e-a146-1f812401c072" class="">2、冬菜兼顾创50权重和券商性质；</p><p id="45ff0cac-991b-47de-934c-dca770f2d8b1" class="">3、7月1日行情的加速；</p><p id="75da1229-8f05-4e67-ac7d-b9c8a686be97" class="">4、MA3期间一直是大于MA5，直到昨天。</p><p id="04427013-81a2-42c8-a298-2d216c47d840" class=""> </p><p id="27ff2835-35aa-46e0-8a6e-05f2676d0814" class=""><a href="https://weibo.com/1862695480/JbDfqiD8x?from=page_1005051862695480_profile&amp;wvr=6&amp;mod=weibotime">7月17日 17:12</a> 来自 <a href="http://vip.weibo.com/prividesc?priv=1006&amp;from=feed">iPhone 6s</a> </p><p id="ee27598b-6255-40e3-8884-3b84604601bb" class="">按照18年我们直播过的惯例，那年他也是两次（2019年也是两次）。他大概会10月-11月回来再捞一次。他在你们痛苦时归来。一锤子到底，一波流不回头，全仓只做冬菜。 ​​​​</p><p id="538725b2-8776-4619-be34-a139308996d4" class="">
+</p><p id="55698346-f1f7-4d5e-847b-8d6375221b6d" class=""><a href="https://weibo.com/1862695480/JbNOJC2M6?from=page_1005051862695480_profile&amp;wvr=6&amp;mod=weibotime">7月18日 20:07</a> 来自 <a href="http://vip.weibo.com/prividesc?priv=1006&amp;from=feed">iPhone SE</a> </p><p id="27b28ae9-514f-4069-a8d4-dd5bb1524e5c" class="">理工男创新高我一定double进。现在？里面的人互相揉拧一番为好。 ​​​​</p><p id="f8168f82-33bf-49bc-9db7-f9a547d203b9" class="">
+</p><p id="17144c2f-cf87-457e-a623-a12a0de49d1d" class=""><a href="https://weibo.com/1862695480/J9vd0wgdm?from=page_1005051862695480_profile&amp;wvr=6&amp;mod=weibotime">7月3日 17:04</a> 来自 <a href="http://vip.weibo.com/prividesc?priv=1006&amp;from=feed">iPhone 6s</a> 已编辑</p><p id="df37b626-1b1a-40e3-abe2-f0ddbcf49100" class="">老江湖说的量起来了。量很重要。部分原因是我们先打牌了，对冲香港事情的可能性反击。但趋势不会轻易改变。潜在减缓因素一是老美的反应，目前大长老形势略被动，会打对手牌。二是如果定位是韧性，则会希望走慢一点。但情绪是本国市场的特色。几重因素吧。所以你也不必分清楚自己是冲浪还是浪冲。在。 ​​​</p><p id="54556be7-5c91-4633-8f5d-8e2cf866e14c" class="">
+</p><p id="6a3a50fb-de82-47da-b498-09b37041b94a" class=""><a href="https://weibo.com/1862695480/JbNUPc8wQ?from=page_1005051862695480_profile&amp;wvr=6&amp;mod=weibotime">7月18日 20:22</a> 来自 <a href="http://vip.weibo.com/prividesc?priv=1006&amp;from=feed">iPhone SE</a> </p><p id="6bf24c80-6757-4e19-8155-3a095a3feee1" class="">“外资”已经完成对冲香港GA法的任务。现在要回去防御本尊。必须要说这么透彻吗？这是3号的微博，你对应一下。</p><p id="47eb74bc-e4e6-4bfb-b19a-bdeffbe8bcd1" class="">
+</p><p id="78750a1e-506f-4460-afa1-76ff2129bc2a" class=""><a href="https://weibo.com/1862695480/JbPpYBHUX?from=page_1005051862695480_profile&amp;wvr=6&amp;mod=weibotime">7月19日 00:11</a> 来自 <a href="http://vip.weibo.com/prividesc?priv=1006&amp;from=feed">iPhone SE</a> </p><p id="d6ec2647-7f1b-4bf3-a8ad-5ec9449774a7" class="">一般人需要的四大基础：住房、教育、医疗、娱乐，长沙不是简单优越于深圳。是碾压。 ​​​​</p><p id="1c96466c-284b-44a1-8f16-bef8f4b1f932" class="">
+</p><p id="52d0de5d-def3-4f58-a075-6c55eb2985fd" class=""><a href="https://weibo.com/1862695480/JbTiXfNEQ?from=page_1005051862695480_profile&amp;wvr=6&amp;mod=weibotime">7月19日 10:05</a> 来自 <a href="http://vip.weibo.com/prividesc?priv=1006&amp;from=feed">iPhone SE</a> 已编辑</p><p id="2dd422a5-8356-4bf4-b4da-5ca5e4668a37" class="">体育产业因为天花板过于高远，事件驱动也不断，合适拿好，以及考验你的心态。它们既不属于防御板块，也不是进攻性很强，除非你自己瞎折腾，一般不会亏钱。至于是否大赚，取决于你拿什么心态对待它们。你爱就OK，不爱，还嫌它们慢，亏死你。 ​​​​</p><p id="3ea430f4-2dbf-4edb-ace0-af3d9e93e51f" class="">
+</p><p id="1e4a87f4-ccde-4b45-bd35-389d5f034f76" class=""><a href="https://weibo.com/1862695480/JbUhvxGHS?from=page_1005051862695480_profile&amp;wvr=6&amp;mod=weibotime">7月19日 12:34</a> 来自 <a href="http://vip.weibo.com/prividesc?priv=1006&amp;from=feed">iPhone 6s</a> 已编辑</p><p id="7e7571fe-a801-4ccf-9358-85ba0b033397" class="">七月份第二个锦囊。多注意果子并购重组主题。指数不高不低，最合适各方达成协议。
+如果叠加创业板交易改革，或有黑不溜秋的horse。交易策略：小勺慢饮，忘记成本。 ​​​​</p><p id="7baf37b7-69cf-4516-8cc6-e7aba9fa72cf" class="">
+</p><p id="9a2fe6df-7075-405b-8213-3c29291a974e" class=""><a href="https://weibo.com/1862695480/JbWcSaRs1?from=page_1005051862695480_profile&amp;wvr=6&amp;mod=weibotime">7月19日 17:28</a> 来自 <a href="http://vip.weibo.com/prividesc?priv=1006&amp;from=feed">iPhone SE</a> </p><p id="a65c68f2-9116-4525-93c3-e756b76d4b62" class="">火锅帮认为，大的方面，美股风险还是在选举之前或某个节点吧。美股只是性价比不高但不意味着就要特别紧张。大A的重心应该在科技板块，几个大的产业板块（苹果、特斯拉等等）都还有空间。大A大的动荡也会和美股节奏一致。等吧。</p><p id="1473d807-8d4c-456a-bd43-1e1f94121061" class="">
+</p><p id="b3f977f8-de4d-477c-bde6-1f94f604a60f" class="">基础研究、商业伦理、权力制衡，至少这三种软实力不被破坏的情形下，老美依旧强大。那些硬的表象的都是依附于斯的。  </p><p id="8b905069-b341-4c39-a96b-0dc47165ad1c" class="">
+</p><p id="9105cccd-8227-4d47-a8a4-82d8ca05ab99" class=""><a href="https://weibo.com/1862695480/JcudmEpMh?from=page_1005051862695480_profile&amp;wvr=6&amp;mod=weibotime">今天 08:03</a> 来自 <a href="http://vip.weibo.com/prividesc?priv=1006&amp;from=feed">iPhone SE</a> 已编辑</p><p id="b55f3b1e-ce3c-4688-ac12-aa386745741f" class="">周围马屁精多了会晕菜的。这些人很聪明，但阅历根基毕竟肤浅。大人物都是被小人出卖的。搞死崇祯吊歪把子树不可一世的李自成同志就是被乡下人一锄头砸死的。无名人杀有名人。小人都是嘴甜心狠之辈。看一家公司看一个人起落看一段运程，主要看他周围小人是否得志。 </p><p id="fa264808-d0b2-445d-acb8-66b51486e509" class="">
+</p><p id="840bed00-fa8d-447b-baef-d2c1ac2dc965" class=""><a href="https://weibo.com/1862695480/JctqC6sAi?from=page_1005051862695480_profile&amp;wvr=6&amp;mod=weibotime">今天 06:03</a> 来自 <a href="http://vip.weibo.com/prividesc?priv=1006&amp;from=feed">iPhone SE</a> 已编辑</p><p id="551d16fb-4348-4f30-9c91-551b249b500b" class="">高瓴会走明天的老路吗？但愿不要自以为“高明”。
+资本锋锐如韧。 这几年盘子大了屋檐下的鸟也多了。有些鸟不是坏。是太急。 </p><p id="cee4dd6d-9a20-48c7-8321-86819d43a4cd" class="">
+</p><p id="b2a9273b-b7ed-4603-95eb-e233892d0873" class=""><a href="https://weibo.com/1862695480/JctlGe8ln?from=page_1005051862695480_profile&amp;wvr=6&amp;mod=weibotime">今天 05:51</a> 来自 <a href="http://vip.weibo.com/prividesc?priv=1006&amp;from=feed">iPhone SE</a> </p><p id="e23a21ab-e08c-4eb3-91f0-e92dcbce4086" class="">不要把普通人和政客对等。不要把在野和台上的政客对等。不要把同一个政客不同时期对等。不要把媒体报道和在家跟亲密朋友说话的那个政客对等。 </p><p id="cb632bdd-e3f0-49ec-875a-090d41be3b01" class="">
+</p><p id="ab109c30-69a6-4d90-abbb-e48355d6f808" class=""><a href="https://weibo.com/1862695480/Jcu6At7yS?from=page_1005051862695480_profile&amp;wvr=6&amp;mod=weibotime">今天 07:46</a> 来自 <a href="http://vip.weibo.com/prividesc?priv=1006&amp;from=feed">iPhone SE</a> </p><p id="d6df1df4-0891-4f84-b98e-ce9e3b83802e" class="">毕竟寒门子弟。未知望族之阴损。他已经犯过一次错，好不容易爬出来。第二次就不容易了。 </p><p id="f0ea7dfa-1be9-4da3-9030-caefd0517e1d" class="">
+</p><p id="225ec89b-03ae-4358-a5aa-8b5fc5a33e37" class=""><a href="https://weibo.com/1862695480/Jcy6tlAoY?from=page_1005051862695480_profile&amp;wvr=6&amp;mod=weibotime">11分钟前</a> 来自 <a href="http://vip.weibo.com/prividesc?priv=1006&amp;from=feed">iPhone SE</a> 已编辑</p><p id="6453138e-db5c-40d0-968c-1a27c2ca30d2" class="">如果美股九月底开始第二波回调的话，科技股大幅下挫，我们这儿也会血流成河。这一点我比较有把握。因为这个市场毫无血性。逃离次序上次说过了。不过这段时间还是安全的。毕竟亲爸爸的公司走特批最快也要九月中了。作为古往今来最伟大的公司，四大发明之首，浙江省的心头肉，必须要喜庆啊。 </p><p id="883d5e1d-72f9-4742-8530-3e560ce19dca" class="">
+</p><p id="0dc45240-927a-4ee5-9e8f-18b17a573bee" class=""><a href="https://weibo.com/1862695480/Jcy3iunpS?from=page_1005051862695480_profile&amp;wvr=6&amp;mod=weibotime">19分钟前</a> 来自 <a href="http://vip.weibo.com/prividesc?priv=1006&amp;from=feed">iPhone SE</a> </p><p id="c606c0be-dea4-4f08-8c66-15a8290df4b7" class="">寒武纪负责蒸发500亿超发人民币问题不大。
+</p><p id="ffffe378-62ba-435a-9f10-cc4c63c89063" class=""><a href="https://weibo.com/1862695480/Jcy2mm86u?from=page_1005051862695480_profile&amp;wvr=6&amp;mod=weibotime">21分钟前</a> 来自 <a href="http://vip.weibo.com/prividesc?priv=1006&amp;from=feed">iPhone SE</a> </p><p id="06dfecd3-bee1-4016-b339-07c246bd56fc" class="">股价去年最高162的伟大科创板公司股票沃尔德宣布股东及董监高拟合计减持公司不超9.08%股份。今天收盘价52.62。回到30很正常吧？一年蒸发掉80%市值。没事，有钱人反正钱多。 一只股票一百亿神秘消失。一百只就是一万亿。没事。。。 </p><p id="e870eb74-4d26-4742-a9b6-6edfbf3909fb" class="">
+</p><p id="9310b093-30a7-4e92-a657-c1ae984127d4" class=""><a href="https://weibo.com/1862695480/JcxQ2bsKC?from=page_1005051862695480_profile&amp;wvr=6&amp;mod=weibotime">51分钟前</a> 来自 <a href="http://vip.weibo.com/prividesc?priv=1006&amp;from=feed">iPhone SE</a> 已编辑</p><p id="8b49e616-8033-4b58-b654-ecbeb5be234a" class="">既无退市之忧又能每年20-30%成长的十几亿创业板精品小票多好啊。闭着眼睛买。盲套。然后过段时间开长周期空指对冲。很香。睡得着。这是换一种说法说明七月份第二个盲套。good luck </p><p id="06ca16d4-3f87-4e73-ae11-7902a56b2ef9" class="">
+</p><p id="78da6041-9dc5-4af5-9148-806436f5ef18" class=""><a href="https://weibo.com/1862695480/JcxN0y8pz?from=page_1005051862695480_profile&amp;wvr=6&amp;mod=weibotime">59分钟前</a> 来自 <a href="http://vip.weibo.com/prividesc?priv=1006&amp;from=feed">iPhone SE</a> </p><p id="76e6a2f6-b706-4b25-ad5b-505ade8ea684" class="">绝大多数科创板股票等两年以后减持结束再介入为好。一两折遍地都是。反正不值钱。 </p><p id="2eeaf4fe-2d8a-4185-8c93-f60b6d92c71c" class="">
+</p><p id="7d3ba39b-2195-4025-96cc-7ef4e5c1659d" class=""><a href="https://weibo.com/1862695480/JcFdE9lja?from=page_1005051862695480_profile&amp;wvr=6&amp;mod=weibotime">今天 12:04</a> 来自 <a href="http://vip.weibo.com/prividesc?priv=1006&amp;from=feed">iPhone SE</a> </p><p id="3381d575-2807-40fe-bab9-6de7c1fb6c13" class="">“请问老江湖。。。”不说了十月底十一月才回来吗？冬菜就是他的一夜情，done老江湖正在下面那个抢耳机微博跟你一样扮可爱：我分子！我分子！ </p><p id="6534799b-aca1-41fa-81ab-0e0c0233a329" class="">
+</p><p id="47acddb5-5de2-4ca7-b5bc-2078e1249f3f" class=""><a href="https://weibo.com/1862695480/JcQ4IpDHP?from=page_1005051862695480_profile&amp;wvr=6&amp;mod=weibotime">今天 15:42</a> 来自 <a href="http://vip.weibo.com/prividesc?priv=1006&amp;from=feed">iPhone SE</a> </p><p id="91ffa32f-36ac-4f55-9425-529fd969575d" class="">结构性行情就三个要素：1、行为金融学；2、龙头；3、做好反向对冲 </p><p id="bec7a2c9-c006-42b0-b22c-09d0ae5d04df" class="">
+</p><p id="b6155d5e-26a8-44e0-972b-2848a342e93a" class=""><a href="https://weibo.com/1862695480/JcQwt4Pox?from=page_1005051862695480_profile&amp;wvr=6&amp;mod=weibotime">今天 16:50</a> 来自 <a href="http://vip.weibo.com/prividesc?priv=1006&amp;from=feed">iPhone客户端</a> </p><p id="7501947e-3c68-490e-84fd-3b5e0cb4b97d" class="">你何时看见老易也西装革履上TV了，大牛市就要来了。我和小伙伴们就会放大到现在规模的十倍二十倍进这个市场，完成一次投资盛宴。那时候靠规模取胜，你还得会国际募集。这也是行为金融指标，现在凑和混吧，哪有那么多好机会。我之前说过大牛市大概率出清以后，和人民币国际化有关，以及全球可对冲。 </p><p id="b9198a4b-28eb-49c7-b4c4-ccb241984542" class="">
+</p><p id="88421fcb-faba-4aa9-91a8-2fe3dcae7975" class=""><a href="https://weibo.com/1862695480/J0uV2tZBa?ref=home">5月5日 11:47</a> 来自 <a href="https://vip.weibo.com/prividesc?priv=1006&amp;from=feed">iPhone客户端</a></p><p id="f2e02fc9-c253-452d-a222-089bf20d47f8" class="">未来三十年，“内斗”时代，摆明了就是各地为对手盘、发展经济增厚民生。认识不到这一点就是腐儒。  </p><p id="e063be05-d8a8-43b4-a1d9-a47a113ca543" class="">
+</p><p id="b63c0ce6-79c7-454d-a10d-e12aa8a5f84c" class=""><a href="https://weibo.com/1862695480/IF7AnAJLO?ref=home">4月26日 17:01</a> 来自 <a href="https://vip.weibo.com/prividesc?priv=1006&amp;from=feed">iPhone 6s</a></p><p id="c5252953-a9b5-46eb-b1b4-1ca6a7837679" class="">未来几年的主要特点是存量争夺和国内竞争。内斗。行业和行业掐，区域和区域掐，政策和政策掐。春秋无义战。别做宋襄公。  </p><p id="bd47c4c6-b764-4ea8-8985-90b2e9beb477" class="">
+</p></div></article></body></html>
